@@ -1,0 +1,715 @@
+@media (max-width: 1199px) {
+    .but-lk {
+        margin: 25px auto 0 -35px;
+    }
+
+    .section-lk-top .top .name-person {
+        height: 85px;
+    }
+
+    .video-news {
+        width: 100%;
+    }
+
+    .my_application {
+        float: left;
+    }
+
+    .btn-dimensions {
+        margin-top: 18px;
+    }
+
+    .but-lk {
+        margin: 22px auto;
+    }
+
+    .section-lk-top .top {
+        height: 100%;
+    }
+
+    .btn-black {
+        margin: 10px auto;
+    }
+
+    .lk-parner {
+        width: 40%;
+    }
+
+    .section-lk-top .top .name-person {
+        background-position-x: 100%;
+    }
+
+    .step-content:before {
+        display: none;
+    }
+
+    .section-steps-relocation .steps .step-menu button {
+        margin-bottom: 20px;
+    }
+
+    .step-content .content-choice:before {
+        display: none;
+    }
+
+    .section-steps-relocation .steps .step-menu {
+        justify-content: center;
+    }
+
+    .step-content .content-choice .geography-block {
+        margin-right: 125px;
+        margin-left: 125px;
+    }
+
+    .col-three .lk-rel {
+        width: 48%;
+    }
+
+    .col-three .lk-rel label {
+        display: block;
+    }
+
+    .block-add-service .item {
+        width: 33%;
+    }
+
+    .add-serv-descript textarea {
+        margin-bottom: 0;
+    }
+
+    .downloading-files .list .item .all-coll .center-col {
+        width: 420px;
+    }
+
+    .red-circle {
+        top: 15px;
+        right: 35px;
+    }
+
+    .some-things .information-things .left-col {
+        width: 48%;
+    }
+
+    .some-things .information-things .right-col {
+        width: 48%;
+    }
+
+    .untitled .r-col .r-all input {
+        width: 245px;
+    }
+
+    .list-things-block {
+        margin: 50px 35px 20px 35px;
+
+    }
+
+    .block-active-things, .not-name-count {
+        margin-left: 40px;
+    }
+
+    .some-things .information-things {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .choise-catalog-things .tab-content-things .content-choice-things .other-things .things .item {
+        width: 33%;
+    }
+
+    .but-btn.add_things_js {
+        margin: inherit;
+    }
+
+    .red-circle {
+        top: 6px;
+        right: 2px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .section-lk-top .top .name-person {
+        background-size: 100%;
+        background-position: top;
+    }
+
+    .section-lk-top .top {
+        height: 100%;
+    }
+
+    .btn-black a {
+        font-size: 11px;
+        line-height: 11px;
+    }
+
+    .content-news .news {
+        margin: 0 50px 50px 50px;
+    }
+
+    .content-news .news h2 {
+        font-size: 20px;
+        line-height: 20px;
+        margin: 40px auto 20px auto;
+    }
+
+    .video-news {
+        width: 100%;
+        height: 350px;
+    }
+
+    .lk-parner {
+        width: 100%;
+    }
+
+    .lk-parner {
+        padding: 0;
+        margin: 20px auto;
+    }
+
+    .content-form-profile .profile-form {
+        margin: 70px 5px;
+    }
+
+    .section-ordering-services .order {
+        width: 75%;
+        margin: 55px auto 0 auto;
+    }
+
+    .section-ordering-services .order h3 {
+        font-size: 25px;
+        line-height: 30px;
+        margin: 20px auto 5px auto;
+    }
+
+    .section-ordering-services .order p {
+        padding-bottom: 30px;
+    }
+
+    .order-relocation {
+        margin: 90px auto 0 auto;
+    }
+
+    .step-content .content-choice .geography-block {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    .step-content .content-choice .conditions-block {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .block-add-service .item {
+        width: 50%;
+    }
+
+    .downloading-files .list .item .all-coll {
+        display: block;
+    }
+
+    .downloading-files .list .item .all-coll .center-col {
+        width: 100%;
+    }
+
+    .downloading-files .list .item .all-coll .center-col .info {
+        position: inherit;
+        top: inherit;
+        transform: inherit;
+        margin-top: 15px;
+    }
+
+    .list-things-bt button, .list-things-bt {
+        width: 220px;
+        position: inherit;
+        top: inherit;
+        transform: inherit;
+    }
+
+    .downloading-files .right-col {
+        margin-left: 30px;
+        margin-top: 10px;
+    }
+
+    .section-lk-top .top .name-person {
+        height: 75px;
+    }
+
+    .list-things-block {
+        margin: 50px 25px 20px 25px;
+    }
+
+    .some-things .information-things .left-col {
+        width: 100%;
+    }
+
+    .some-things .information-things {
+        display: block;
+    }
+
+    .some-things .information-things .right-col, .some-things .information-things .left-col .r-col, .untitled .r-col .r-all input {
+        width: 100%;
+    }
+
+    .choise-catalog-things .tab-menu-things {
+        width: 400px;
+    }
+
+    .choise-catalog-things .tab-menu-things button {
+        font-size: 13px;
+    }
+
+    .untitled .r-col .all-label {
+        display: block;
+    }
+
+    .choise-catalog-things .tab-content-things .content-choice-things .other-things .things .item {
+        width: 50%;
+    }
+
+    .but-lk {
+        margin: 20px auto;
+    }
+
+    .section-lk-top .top .name-person {
+        margin-top: -2px;
+    }
+
+    .red-circle {
+        top: 6px;
+        right: 2px;
+    }
+    .section-lk-top .top .name-person {
+        background-size: cover;
+        background-position-x: 100%;
+    }
+}
+
+@media (max-width: 991px) {
+    .red-circle {
+        top: 2px;
+        right: 2px;
+    }
+
+    .btn-dimensions {
+        width: 105px;
+    }
+
+    .btn-black {
+        margin: 5px auto 10px auto;
+    }
+    .pr-lk .but-lk {
+        margin: 16px auto;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .btn-dimensions {
+        width: 130px;
+    }
+
+    .all-demens {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .btn-dimensions {
+        margin: 0 auto 20px auto;
+    }
+
+    .all-demens .not-pad {
+        width: 130px;
+    }
+
+    .section-lk-top .top {
+        height: 100%;
+    }
+
+    .section-lk-top .top .name-person {
+        margin: 20px 20px 0 20px;
+    }
+
+    .but-lk {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .section-lk-top .top {
+        border: inherit;
+    }
+
+    .section-lk-top .top .name-person {
+        background: #26415b;
+    }
+
+    .not-pad {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .red-circle {
+        right: 0;
+    }
+
+    /*.all-demens{*/
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+    /*}*/
+    .red-circle {
+        top: -3px;
+    }
+
+    .lk-parner {
+        padding: 0;
+        margin: 20px auto;
+    }
+
+    .step-content .content-choice .all-profile {
+        display: block;
+    }
+
+    .step-content .content-choice {
+        width: 100%;
+    }
+
+    .step-content .content-choice .all-profile {
+        width: 100%;
+    }
+
+    .step-content .content-choice h4 {
+        width: 315px;
+        margin: 5px auto;
+        padding: 10px 20px;
+    }
+
+    .order-relocation {
+        width: 80%;
+        margin: 60px auto 0 auto;
+        height: 90px;
+    }
+
+    .step-content .content-choice .geography-block {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .step-content .content-choice .conditions-block h4 {
+        width: 100%;
+    }
+
+    .checkbox {
+        margin-top: 10px;
+    }
+
+    .order-lk {
+        width: 315px;
+        margin: 0 auto;
+    }
+
+    .conditions-block .order-lk {
+        width: 100%;
+    }
+
+    .col-three .lk-rel {
+        width: 100%;
+    }
+
+    .downloading-files .list .item {
+        display: block;
+        height: 100%;
+    }
+
+    .downloading-files .list .item .left-col {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        border-bottom: 1px solid #d1d1d1;
+        border-top: 1px solid #d1d1d1;
+    }
+
+    .downloading-files .list {
+        border: inherit;
+    }
+
+    .downloading-files .list .item .all-coll .center-col .info {
+        margin: 15px 20px;
+        text-align: center;
+    }
+
+    .downloading-files .right-col {
+        margin: 0 auto 30px auto;
+    }
+
+    .list-things-bt button, .list-things-bt {
+        margin: 0 auto;
+    }
+
+    .section-lk-top .p-l {
+        padding-left: 0 !important;
+    }
+
+    .step-content .content-choice .list-things-block h4 {
+        width: 100%;
+    }
+
+    .btn-dimensions {
+        position: relative;
+    }
+
+    .my_application {
+        float: inherit;
+    }
+}
+
+@media (max-width: 640px) {
+    .choise-catalog-things {
+        display: block;
+    }
+
+    .choise-catalog-things .tab-menu-things {
+        width: 100%;
+
+    }
+
+    .choise-catalog-things .tab-content-things {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .some-things .delete-block .delete-things {
+        margin-bottom: 0;
+    }
+
+    .some-things .information-things .left-col .l-col {
+        width: 50%;
+    }
+
+    .some-things .information-things .left-col .l-col {
+        height: auto;
+    }
+
+    .some-things .information-things .right-col {
+        width: 100%;
+    }
+
+    .some-things .information-things .left-col .l-col img {
+        max-width: 50%;
+    }
+
+    .all-foto-block .add-foto .butt {
+        width: 30%;
+    }
+
+    .section-lk-top .top .name-person {
+        height: 85px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-lk-top .top .name-person .all h4 {
+        font-size: 15px;
+        margin: 0 70px 5px 15px;
+
+    }
+
+    .section-lk-top .top .name-person .all p {
+        margin: 0 100px 0 15px;
+    }
+
+    .content-news .news h2 {
+        font-size: 18px;
+        line-height: 18px;
+        margin: 20px auto 20px auto;
+        padding: 15px;
+    }
+
+    .content-news .news {
+        margin: 0;
+    }
+
+    .video-news {
+        width: 100%;
+        height: 175px;
+        margin-bottom: 0;
+    }
+
+    .content-news {
+        margin-bottom: 30px;
+    }
+
+    .red-circle {
+        top: -3px;
+    }
+
+    .section-ordering-services .order {
+        width: 85%;
+        margin: 30px auto 0 auto;
+    }
+
+    .section-ordering-services .order h3 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .section-ordering-services .order p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .section-choce-service .choce-service .item {
+        width: 120px;
+        height: 140px;
+        margin: 15px 5px;
+    }
+
+    .section-choce-service .choce-service .item .pict {
+        width: 60%;
+        height: 75px;
+    }
+
+    .order-relocation {
+        width: 80%;
+        margin: 35px auto 0 auto;
+        height: 70px;
+    }
+
+    .order-relocation h3 {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .step-content .content-choice p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .lk-rel {
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .step-content .content-choice h4 {
+        width: 260px;
+    }
+
+    .step-content .content-choice h4 {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    select {
+        width: 260px;
+    }
+
+    .order-lk {
+        width: 260px;
+        margin: 0 auto;
+    }
+
+    .step-content .content-choice .conditions-block {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .block-add-service .item {
+        width: 100%;
+    }
+
+    .step-content .content-choice .additional-services h4 {
+        margin-right: 0;
+    }
+
+    .arrow-steps {
+        display: block;
+    }
+
+    .add-serv-descript textarea {
+        width: 100% !important;
+    }
+
+    .checkbox {
+        margin-top: 10px;
+    }
+
+    .conditions-block .order-lk {
+        width: 260px;
+    }
+
+    .list-things-block {
+        margin: 20px;
+    }
+
+    .downloading-files .list .item .left-col {
+        width: 85px;
+        height: 85px;
+    }
+
+    .list-things-bt button, .list-things-bt {
+        width: 180px;
+    }
+
+    .list-things-bt button {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .some-things h3 {
+        font-size: 14px;
+        line-height: 16px;
+        margin-left: 15px;
+    }
+
+    .create-things {
+        margin: 0 10px;
+    }
+
+    .some-things .information-things .left-col .l-col {
+        margin-right: 10px;
+        width: 80px;
+        height: 75px;
+    }
+
+    .some-things .information-things .left-col .l-col {
+        width: 80px;
+    }
+
+    .some-things .information-things .left-col .r-col .counter {
+        margin-bottom: 5px;
+    }
+
+    .all-foto-block .add-foto .butt {
+        width: 60%;
+    }
+
+    .all-foto-block .arhive-foto .foto-block {
+        justify-content: space-around;
+    }
+
+    .choise-catalog-things .tab-content-things .content-choice-things .other-things .things .item .svg {
+        width: 35px;
+        height: 35px;
+    }
+
+    .some-things .line_shadow {
+        height: 2px;
+        background: inherit;
+    }
+
+    .check-list .list-things .item {
+        display: block;
+    }
+
+    .check-list .list-things .item .l-col {
+        margin: 0 auto;
+    }
+
+    .check-list .list-things .item .center-col, .check-list .list-things .item .r-col {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .some-things .information-things .left-col {
+        display: block;
+    }
+}

@@ -1,0 +1,404 @@
+@media (max-width: 1199px) {
+    .section-goal .block-goal .block-title .line {
+        width: 64%;
+    }
+
+    .section-aboutUs-main .right-pict {
+        right: -45%;
+    }
+
+    .section-aboutUs-main .car {
+        left: -60%;
+    }
+    .section-command .command .foto-associate .foto, .section-command .command .foto-associate, .section-command .command .foto-associate .imposition {
+        width: 150px;
+        height: 150px;
+    }
+    .section-contact .block-map {
+        width: 100%;
+    }
+    .section-issues .issues .left-col {
+        width: 40%;
+    }
+    .section-issues .issues .right-col h3 {
+        margin: 80px 20px 40px 105px;
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .section-issues .issues .right-col h3:before {
+        left: -70px;
+    }
+    .section-issues .issues .left-col{
+        height: 100%;
+    }
+    .btn-question {
+        margin-left: 100px;
+        margin-bottom: 75px;
+    }
+    .section-issues .issues {
+        margin-bottom: 80px;
+    }
+    .section-issues .issues .right-col:before {
+        height: 84%;
+    }
+}
+
+@media (max-width: 1023px) {
+    .section-aboutUs-main .title {
+        position: relative;
+        width: 650px;
+    }
+
+    .right-pict img {
+        max-width: 78%;
+    }
+
+    .section-aboutUs-main .right-pict {
+        position: absolute;
+        right: -53%;
+    }
+
+    .section-aboutUs-main .title {
+        padding-top: 55px;
+    }
+
+    .section-aboutUs-main .car {
+        top: 36%;
+    }
+
+    .car img {
+        max-width: 78%;
+    }
+
+    .section-goal .block-goal .block-title {
+        display: block;
+    }
+
+    .section-goal .block-goal .block-title .line {
+        width: 90%;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .section-goal .block-goal {
+        margin-left: 120px;
+    }
+
+    .section-goal .block-goal .block-title .title:before {
+        left: -20%;
+        top: 20%;
+    }
+
+    .section-goal .block-goal .block-title .title h4 {
+        margin-bottom: 10px;
+    }
+    .section-goal .block-goal:before {
+        left: -22%;
+        top: 17%;
+    }
+    .section-command .command{
+        display: block;
+    }
+    .section-command .command .foto-associate .foto, .section-command .command .foto-associate, .section-command .command .foto-associate .imposition {
+        width: 160px;
+        height: 160px;
+    }
+    .section-command .command .foto-associate{
+        margin-bottom: 15px;
+    }
+    .section-command .command .info-associate {
+        width: 100%;
+    }
+    .section-contact .block-map .contacs {
+        width: 300px;
+    }
+    .section-contact .block-map .contacs .all-block {
+        margin-left: 30px;
+    }
+    .section-contact .block-map .contacs h3 {
+        margin: 40px 50px 30px 85px;
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .section-issues .issues .right-col h3 {
+        margin: 30px 20px 30px 95px;
+        font-size: 22px;
+        line-height: 25px;
+    }
+    .btn-question {
+        margin-left: 95px;
+        margin-bottom: 0;
+        width: 240px;
+    }
+    .section-issues .issues .right-col:before {
+        height: 80%;
+    }
+    #map_adress {
+        width: 57%;
+    }
+    .section-issues .issues .right-col h3 {
+        margin: 55px 40px 30px 95px;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .section-issues .issues .right-col h3:before {
+        top: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+    .section-aboutUs-main .right-pict, .section-aboutUs-main .car {
+        display: none;
+    }
+    .section-issues .issues .right-col:before{
+        display: none;
+    }
+    .mob_car {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .mob_car img {
+        max-width: 80%;
+    }
+
+    .section-aboutUs-main .title {
+        width: 100%;
+    }
+    .section-goal .block-goal:before {
+        left: -105px;
+        top: 15%;
+    }
+    .section-command .command {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .section-command .command .foto-associate {
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    .section-contact .block-map{
+        display: block;
+    }
+    .section-contact .block-map .contacs {
+        width: 100%;
+        border-right: inherit;
+        margin-bottom: 40px;
+        padding-top: 35px;
+        padding-bottom: 30px;
+        background: #fff;
+    }
+    .section-contact .block-map{
+        background: inherit;
+    }
+    .section-issues .issues {
+        display: block;
+    }
+    .section-issues .issues .left-col {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .section-issues{
+        max-height: 100%;
+    }
+    .section-issues .issues .right-col {
+        width: 100%;
+        background: #3f51b5;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        margin-bottom: 30px;
+    }
+    .section-issues, .section-issues .issues{
+        max-height: 100%;
+    }
+    #map_adress {
+        width: 100%;
+        height: 340px;
+        margin-top: 40px;
+    }
+    .section-contact .block-map{
+        border: inherit;
+    }
+    .section-contact .block-map .contacs h3 {
+        margin: 0 50px 30px 85px;
+    }
+    .section-contact .block-map{
+        height: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .section-aboutUs-main .title h2 {
+        font-size: 35px;
+        line-height: 35px;
+        margin: 0 auto 10px 60px;
+    }
+
+    .section-aboutUs-main .title .line, .section-aboutUs-main .title .main-info {
+        margin-left: 60px;
+    }
+
+    .section-aboutUs-main .title {
+        padding-top: 40px;
+    }
+    .section-contact .block-map{
+        height: 100%;
+    }
+    .section-aboutUs-main .title {
+        margin-top: 120px;
+        padding-top: 45px;
+        margin-bottom: 30px;
+        padding-bottom: 40px;
+        width: 100%;
+    }
+    .section-aboutUs-main .title .main-info {
+        margin-right: 25px;
+    }
+    .section-goal .block-goal p {
+        margin: 0 25px 50px auto;
+    }
+    .section-goal .block-goal .block-title .title:before {
+        left: -35%;
+        top: 10%;
+    }
+    .section-goal .block-goal:before {
+        left: -105px;
+        top: 15%;
+    }
+    .section-goal .block-goal .block-title .line{
+        display: none;
+    }
+    .section-goal .block-goal {
+        margin-left: 20px;
+    }
+    .section-goal .block-goal:before {
+        top: -10%;
+        right: 5px;
+        left: inherit;
+        background-size: 75%;
+    }
+    .section-command .title h2 {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .section-command .title h2:before {
+        width: 120px;
+        height: 60px;
+        margin-top: -10px;
+    }
+.section-command .command .foto-associate .imposition{
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .section-command .command {
+        display: block;
+        text-align: inherit;
+        margin-bottom: 40px;
+    }
+    .section-aboutUs-main .title h2 {
+        font-size: 25px;
+        line-height: 25px;
+        margin: 0 auto 10px 25px;
+    }
+    .section-aboutUs-main .title .line {
+        margin-bottom: 10px;
+    }
+    .section-aboutUs-main .title .line, .section-aboutUs-main .title .main-info {
+        margin-left: 25px;
+    }
+    .section-goal .block-goal:before {
+        left: -68px;
+        top: 5%;
+        background-size: 80%;
+    }
+    .section-goal .block-goal .block-title .title h4 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+    .section-goal .block-goal {
+        margin-left: 65px;
+    }
+    .section-command .command .foto-associate {
+        margin: 0 0 15px 0;
+    }
+    .section-goal .block-goal .block-title .line{
+        display: none;
+    }
+    .section-goal .block-goal {
+        margin-left: 20px;
+    }
+    .section-goal .block-goal:before {
+        top: -5%;
+        right: 5px;
+        left: inherit;
+        background-size: 55%;
+    }
+    .section-command .title h2, .section-contact .title h2 {
+        font-size: 25px;
+        line-height: 25px;
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+    .section-command .title h2:before, .section-contact .title h2:before {
+        width: 120px;
+        height: 45px;
+    }
+    .section-contact .block-map .contacs h3 {
+        margin: 0 0 30px 60px;
+    }
+    .section-contact .block-map .contacs .all-block .icon {
+        margin-right: 8px;
+    }
+    .section-contact .block-map .contacs .all-block {
+        margin-left: 20px;
+    }
+    .section-contact .block-map .contacs .all-block .info {
+        width: 170px;
+    }
+    .section-issues .issues .right-col h3:before {
+        width: 40px;
+        height: 40px;
+        left: -52px;
+    }
+    .section-issues .issues .right-col h3 {
+        margin: 15px 20px 20px 65px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    .btn-question {
+        margin: 0 auto;
+        width: 240px;
+    }
+    .section-issues .issues {
+        margin: 40px auto;
+    }
+    .section-contact {
+        padding-bottom: 40px;
+    }
+    .section-contact .title h2:before {
+        margin-top: -10px;
+    }
+    .section-issues .issues .right-col {
+        padding-top: 15px;
+        padding-bottom: 25px;
+        margin-bottom: 30px;
+    }
+}

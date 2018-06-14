@@ -1,0 +1,116 @@
+form{
+	position: relative;
+}
+
+.a-valid-message{
+	text-align: left !important;
+	font-family: 'Roboto-Regular' !important;
+	font-weight: 400 !important;
+	font-style: normal !important;
+	color: #fff !important;
+	line-height: normal !important;
+	font-size: 11px !important;
+	background: #BD3D40 !important;
+	padding: 3px 5px !important;
+	z-index: 1001 !important;
+	min-width: 15px !important;
+	max-width: 320px !important;
+	position: absolute !important;
+	display: block !important;
+	margin-top: 30px !important;
+	margin-left: 65px !important;
+}
+
+
+
+
+
+.a-valid-message:before {
+content: '' !important;
+width: 0 !important;
+height: 0 !important;
+border-left: 7px solid transparent !important;
+border-bottom: 14px solid #BD3D40 !important;
+position: absolute !important;
+left: 13px !important;
+top: -13px !important;
+border-right: 7px solid transparent !important;
+
+}
+.main_storage  .a-valid-message{
+	margin-left: 50px !important;
+}
+
+.cal-val  .a-valid-message{
+	margin-left: 10px !important;
+	margin-top: 0 !important;
+}
+
+.bgPopUp{
+	background-color: red;
+}
+
+.center-input .a-valid-message{
+	margin-top: -18px !important;
+	margin-left: 44px !important;
+}
+ .center-input .block-profile .a-valid-message{
+	margin-left: 10px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 640px) {
+.a-valid-message{
+		margin-left: 77px !important;
+	}
+	.main_storage  .a-valid-message{
+		margin-left: 50px !important;
+	}
+	.center-input .a-valid-message {
+		margin-left: 10px !important;
+	}
+
+	.cal-val  .a-valid-message{
+		margin-top: -25px !important;
+		margin-left: 34% !important;
+	}
+	.for_val  .a-valid-message{
+		margin-top: -5px !important;
+		margin-left: 34% !important;
+	}
+	.adress_storage  .a-valid-message{
+		margin-top: 0 !important;
+		margin-left: 30px !important;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.a-valid-message {
+		max-width: 220px !important;
+
+	}
+	.adress-from 	.a-valid-message {
+		margin-top:0 !important;
+
+	}
+	.adress-for 	.a-valid-message {
+		margin-top:0 !important;
+
+	}
+	.for_val  .a-valid-message{
+		margin-top: -5px !important;
+		margin-left: 34% !important;
+	}
+
+
+}

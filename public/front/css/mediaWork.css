@@ -1,0 +1,1040 @@
+@media (max-width: 1600px) {
+    .section-list-work .section-slider-working .item .left-col {
+        width: 50%;
+    }
+
+    .section-slider-working .owl-nav .owl-prev, .section-slider-working .owl-nav .owl-next {
+        left: 3%;
+    }
+
+    .section-slider-working .owl-dots {
+        left: 2.7%;
+    }
+}
+
+@media (max-width: 1440px) {
+    .section-list-work .section-slider-working .item .left-col .item-info {
+        margin: 25px 65px 25px auto;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript ul {
+        width: 390px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .section-list-work .section-slider-working .item .left-col {
+        margin-left: 35px;
+    }
+
+    .section-how-working .title {
+        margin-left: 0;
+    }
+
+    .section-how-working .title:before {
+        margin-left: -15%;
+    }
+
+    .section-how-working .title h2 {
+        padding: 65px 50px 10px 320px;
+    }
+
+    .section-how-working .title .list-work .list {
+        margin-left: 320px;
+    }
+
+    .section-guarantees .block-descript {
+        width: 580px;
+        float: right;
+        margin-top: 75px;
+        margin-bottom: 65px;
+        padding: 30px 60px 30px 45px;
+    }
+
+    .section-guarantees .left-foto {
+        width: 40%;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        font-size: 25px;
+    }
+
+    .section-guarantees .found-company .found-relocation {
+        margin: 0 35px 25px 50px;
+    }
+
+    .our-guar:before {
+        width: 865px;
+        height: 800px;
+    }
+
+    .our-guar:before {
+        width: 865px;
+        height: 800px;
+        right: 35px;
+        animation: inherit;
+        background: inherit;
+        border: 8px solid #f6f7f9;
+    }
+
+    .our-guar:after {
+        width: 119px;
+        height: 820px;
+        right: 35px;
+        animation: inherit;
+    }
+
+    .section-how-working .mob_working {
+        margin-left: -115px;
+    }
+
+    .section-list-work .section-slider-working .item .sentence, .section-list-work .section-slider-working .item .executor {
+        background-position-x: 60%;
+    }
+
+    .section-different-technologies .list-technologies .icon_arrow:after {
+        background-image: url("../img/work/block3/6_chekmark_active.svg");
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 21px;
+        bottom: -10px;
+        right: 0;
+        transform: rotate(-270deg);
+        left: 130px;
+        opacity: 1;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        display: block;
+        margin-left: 50%;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        display: block;
+    }
+
+    .section-different-technologies .list-technologies .all-block:after {
+        left: 130px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn p {
+        padding: 10px 20px 0 20px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        z-index: 88;
+        background: #f5f5f5;
+        border-right: 1px solid #bdbec3;
+        border-bottom: 1px solid #bdbec3;
+        border-left: 1px solid #bdbec3;
+        margin-left: -1px;
+        width: 313px;
+        margin-top: -1px;
+    }
+
+    .section-different-technologies .list-technologies .icon_arrow:after {
+        background-image: url("../img/work/block3/6_chekmark_active.svg");
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 21px;
+        bottom: -10px;
+        right: 0;
+        transform: rotate(-270deg);
+        left: 130px;
+        opacity: 1;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        margin-left: 50%;
+    }
+
+    .section-different-technologies .active_technologies {
+        border-right: 1px solid #bdbec3 !important;
+        border-top: 1px solid #bdbec3 !important;
+        border-left: 1px solid #bdbec3 !important;
+        background: #f5f5f5 !important;
+        height: 108px;
+        width: 313px;
+    }
+
+    .section-different-technologies .list-technologies .all-block {
+        width: 100%;
+        height: 88px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn {
+        width: 155px;
+    }
+
+    .section-list-work .section-slider-working {
+        max-width: 965px;
+    }
+
+    .section-slider-working .owl-dots {
+        left: -3.3%;
+    }
+
+    .section-slider-working .owl-nav .owl-prev, .section-slider-working .owl-nav .owl-next {
+        left: -3%;
+    }
+
+}
+
+@media (max-width: 1023px) {
+    .section-list-work .section-slider-working .item .left-col .item-info {
+        margin: 25px 0 25px auto;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript ul, .section-list-work .section-slider-working .item .left-col .item-info .descript {
+        width: 320px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript ul li {
+        font-size: 14px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript h2 {
+        margin-left: 25px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript ul {
+        margin-left: 5px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info {
+        width: 330px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        display: block;
+    }
+
+    .section-guarantees .block-descript {
+        width: 445px;
+        float: right;
+        margin-top: 55px;
+        margin-bottom: 65px;
+        padding: 30px 40px 0 45px;
+    }
+
+    .section-guarantees .block-descript .list-guarantees .item {
+        margin-bottom: 45px;
+    }
+
+    .section-guarantees .block-descript .list-guarantees {
+        margin-bottom: 80px;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        margin-right: 135px;
+    }
+
+    .our-guar:before {
+        width: 645px;
+        height: 820px;
+        right: 35px;
+        animation: inherit;
+        background: inherit;
+        border: 8px solid #f6f7f9;
+    }
+
+    .our-guar:after {
+        width: 119px;
+        height: 820px;
+        right: 35px;
+        animation: inherit;
+    }
+
+    .section-how-working .title {
+        position: relative;
+        width: 700px;
+        height: 100%;
+        padding-bottom: 30px;
+    }
+
+    .section-how-working .title h2 {
+        font-size: 35px;
+        line-height: 38px;
+    }
+
+    .section-how-working .title h2 {
+        padding: 35px 30px 30px 320px;
+    }
+
+    .section-how-working .title {
+        margin-top: 60px;
+    }
+
+    .section-how-working .title h2 {
+        padding: 55px 30px 10px 320px;
+    }
+
+    .section-how-working .title {
+        padding-bottom: 45px;
+    }
+
+    .section-how-working .mob_working {
+        top: 20px;
+        overflow: hidden;
+        background-size: 80%;
+        margin-left: -20px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn p {
+        padding: 10px 20px 0 20px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        z-index: 88;
+    }
+
+    .section-different-technologies .list-technologies .icon_arrow:after {
+        background-image: url("../img/work/block3/6_chekmark_active.svg");
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 21px;
+        bottom: -10px;
+        right: 0;
+        transform: rotate(-270deg);
+        left: 130px;
+        opacity: 1;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        margin-left: 42%;
+    }
+
+    .section-different-technologies .active_technologies {
+        border-right: 1px solid #bdbec3 !important;
+        border-top: 1px solid #bdbec3 !important;
+        border-left: 1px solid #bdbec3 !important;
+        background: #f5f5f5 !important;
+        width: 350px;
+    }
+
+    .section-guarantees .found-company .found-relocation .pict {
+        width: 65px;
+        height: 65px;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        line-height: 28px;
+    }
+
+    .our-guar:before {
+        width: 645px;
+        height: 810px;
+    }
+
+    .section-list-work .section-slider-working .item .sentence, .section-list-work .section-slider-working .item .executor {
+        background-position-x: 60%;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        width: 350px;
+    }
+
+    .section-list-work .section-slider-working {
+        max-width: 715px;
+    }
+
+    .section-slider-working .owl-dots {
+        left: -5.3%;
+    }
+
+    .section-slider-working .owl-nav .owl-prev, .section-slider-working .owl-nav .owl-next {
+        left: -4.8%;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .section-how-working .mob_working {
+        display: none;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        margin-left: 36%;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        transition: 0.5s;
+        position: relative;
+    }
+
+    .section-different-technologies .list-technologies:hover .all-block {
+        margin-bottom: 15px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        display: block;
+    }
+
+    .section-different-technologies .list-technologies .all-block .icon {
+        width: 65px;
+        height: 50px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn:after {
+        opacity: 0;
+    }
+
+    .section-how-working .title {
+        width: 100%;
+        height: 100%;
+        margin-top: 70px;
+        margin-bottom: 60px;
+    }
+
+    .section-how-working .mob_man {
+        display: block;
+        margin: 15px auto 0 auto;
+        text-align: center;
+        width: 350px;
+    }
+
+    .section-how-working .title .list-work .list {
+        margin-left: 0;
+
+    }
+
+    .section-how-working .title h2 {
+        padding: 45px 0 25px 70px;
+    }
+
+    .list-work {
+        margin-left: 70px;
+        margin-bottom: 20px;
+    }
+
+    .section-technologies .descript-technologies {
+        margin: 30px 20px;
+    }
+
+    .section-technologies .descript-technologies .info {
+        margin: 15px 20px;
+    }
+
+    .section-different-technologies .list-technologies .all-block:after {
+        opacity: 0;
+    }
+
+    .section-different-technologies .list-technologies .icon_arrow:after {
+        background-image: url("../img/work/block3/6_chekmark_active.svg");
+        background-repeat: no-repeat;
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 21px;
+        bottom: -20px;
+        right: 0;
+        transform: rotate(-270deg);
+        left: 80px;
+        opacity: 1;
+    }
+
+    .section-different-technologies .list-technologies .all-block {
+        padding-bottom: 0;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn:before {
+        display: none;
+    }
+
+    .section-different-technologies .list-technologies .all-block .icon {
+        margin-right: 15px;
+    }
+
+    .check_tech {
+        display: block;
+    }
+
+    .section-different-technologies .list-technologies .info-techn p {
+        padding: 20px 0;
+        margin: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .section-different-technologies .list-technologies .all-block {
+        padding-bottom: 10px;
+
+    }
+
+    .section-guarantees .left-foto {
+        height: 300px;
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+    }
+
+    .our-guar:before {
+        display: none;
+    }
+
+    .section-guarantees .block-descript {
+        width: 100%;
+        float: inherit;
+    }
+
+    .section-guarantees .block-descript {
+        width: 100%;
+        float: inherit;
+        margin-top: 0;
+        margin-bottom: 65px;
+        padding: 20px 30px 0 30px;
+
+    }
+
+    .section-guarantees .found-company .found-relocation .pict {
+        background-size: 100%;
+        width: 50px;
+        margin-right: 20px;
+        margin-top: 50px;
+        position: absolute;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        font-size: 23px;
+        line-height: 25px;
+        margin-left: 70px;
+    }
+
+    .section-guarantees .found-company .found-relocation {
+        margin: 0 35px 25px 45px;
+    }
+
+    .our-guar:after {
+        display: none;
+    }
+
+    .section-guarantees .left-foto {
+        display: none;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        transition: 0.5s;
+        position: relative;
+        width: 300px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        border: inherit;
+        background: inherit;
+    }
+
+    .section-different-technologies .list-technologies:hover, .section-different-technologies .list-technologies {
+        width: 250px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .section-different-technologies .list-technologies .all-block {
+        padding-bottom: 10px;
+        height: 70px;
+    }
+
+    .section-different-technologies .list-technologies {
+        padding-top: 0;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn {
+        width: 155px;
+        position: relative;
+        height: 50px;
+    }
+
+    .section-slider-working .owl-nav .owl-prev {
+        left: 3.2%;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript {
+        position: relative;
+        transform: inherit;
+        top: inherit;
+        width: 100%;
+    }
+
+    .section-list-work .section-slider-working .item .right-col .application, .section-list-work .section-slider-working .item .right-col .sentence, .section-list-work .section-slider-working .item .right-col .executor, .section-list-work .section-slider-working .item .right-col .services {
+        height: 220px;
+        background-size: cover;
+    }
+
+    .section-list-work .section-slider-working .item {
+        display: block;
+        border-bottom: inherit;
+        margin-bottom: 5px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .left-col, .section-list-work .section-slider-working .item .right-col {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .section-list-work .section-slider-working {
+        float: inherit;
+        height: 100%;
+        background: #f6f7f9;
+    }
+
+    .section-slider-working .owl-dots {
+        top: inherit;
+        display: flex;
+        width: 160px;
+        margin: 0 auto;
+        left: inherit;
+        position: relative;
+    }
+
+    .section-slider-working .owl-nav .owl-prev {
+        left: 3.2%;
+    }
+
+    .section-slider-working .owl-nav .owl-prev, .section-slider-working .owl-nav .owl-next {
+        margin-bottom: 10px;
+    }
+
+    .section-slider-working .owl-nav .owl-next {
+        right: 3%;
+        left: inherit;
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        margin-bottom: -10px;
+    }
+
+    .section-list-work {
+        height: 100%;
+    }
+
+    .section-slider-working .owl-nav .owl-prev {
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        margin-bottom: -10px;
+        top: inherit;
+    }
+
+    .section-slider-working .owl-dots {
+        top: inherit;
+        display: flex;
+        width: 160px;
+        margin: 0 auto;
+        left: inherit;
+        position: relative;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-list-work .section-slider-working .item .right-col .application, .section-list-work .section-slider-working .item .right-col .sentence, .section-list-work .section-slider-working .item .right-col .executor, .section-list-work .section-slider-working .item .right-col .services {
+        height: 120px;
+        background-size: cover;
+    }
+
+    .section-different-technologies .list-technologies .info-techn p {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        display: block;
+    }
+
+    .section-list-work .section-slider-working .item {
+        display: block;
+        border-bottom: inherit;
+        margin-bottom: 5px;
+    }
+
+    .section-list-work {
+        height: 100%;
+        padding-bottom: 5px;
+    }
+
+    .section-list-work .section-slider-working {
+        height: 100%;
+        background: #f6f7f9;
+    }
+
+    .section-how-working .title h2 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .section-how-working .title h2 {
+        padding: 25px 0 20px 70px;
+    }
+
+    .section-how-working .title {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .section-how-working .title .list-work .list p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .section-how-working .mob_man {
+        width: 250px;
+        margin: 15px auto 0 auto;
+        margin-top: -75px;
+        z-index: 77;
+        position: relative;
+    }
+
+    .left-col, .section-list-work .section-slider-working .item .right-col {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col {
+        width: 100%;
+        margin-left: 0;
+
+    }
+
+    .section-list-work .section-slider-working {
+        float: inherit;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info {
+        width: 100%;
+        float: inherit;
+        border: inherit;
+        height: 100%;
+    }
+
+    .section-list-work .section-slider-working .item .right-col img {
+        width: auto !important;
+        max-width: 100%;
+    }
+
+    .section-slider-working .owl-nav .owl-prev, .section-slider-working .owl-nav .owl-next {
+        bottom: 0;
+        top: inherit;
+    }
+
+    .section-slider-working .owl-nav .owl-next {
+        right: 3%;
+        left: inherit;
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    .section-slider-working .owl-nav .owl-prev {
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -webkit-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+
+    .section-slider-working .owl-dots {
+        top: inherit;
+        display: flex;
+        width: 160px;
+        margin: 0 auto;
+        left: inherit;
+        position: relative;
+    }
+
+    .section-slider-working .owl-dot {
+        margin-right: 15px;
+    }
+
+    .section-slider-working .owl-nav .owl-prev, .section-slider-working .owl-nav .owl-next {
+        margin-bottom: 10px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript {
+        position: relative;
+        transform: inherit;
+        top: inherit;
+        width: 100%;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        margin-right: 70px;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        font-size: 20px;
+    }
+
+    .technologes-block {
+        margin: 20px auto 10px auto;
+    }
+
+    .section-different-technologies .list-technologies .all-block {
+        padding-bottom: 10px;
+        height: 50px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn {
+        position: relative;
+        height: 50px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn p {
+        margin-top: 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .section-different-technologies .list-technologies:hover, .section-different-technologies .list-technologies {
+        margin-bottom: 20px;
+    }
+
+    .section-slider-working .owl-nav .owl-prev {
+        left: 3.2%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .section-how-working .title h2 {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 25px 0 20px 45px;
+    }
+
+    .list-work {
+        margin-left: 45px;
+    }
+
+    .section-different-technologies .list-technologies:hover, .section-different-technologies .list-technologies {
+        width: 250px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn .check_tech {
+        margin-left: 36%;
+    }
+
+    .section-different-technologies .list-technologies:hover .info-techn {
+        margin-left: 0;
+        width: 280px;
+    }
+
+    .section-how-working .title .list-work .list .number {
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        line-height: 16px;
+        margin-right: 15px;
+        padding: 2px 6px;
+        margin-top: 3px;
+    }
+
+    .section-how-working .title .list-work .list p {
+        margin: 6px 0;
+    }
+
+    .section-how-working .mob_man {
+        width: 160px;
+        margin: 0 auto;
+        margin-top: -50px;
+        position: relative;
+        z-index: 77;
+
+    }
+
+    .section-technologies .descript-technologies .info p {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript h2 {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info {
+        width: 100%;
+    }
+
+    .section-list-work .section-slider-working .item .left-col .item-info .descript {
+        width: 290px;
+    }
+
+    .section-slider-working .owl-dots {
+        width: 160px;
+    }
+
+    .section-how-working {
+        margin-bottom: 0;
+    }
+
+    .section-technologies .descript-technologies {
+        margin: 40px 0 20px 0;
+    }
+
+    .section-technologies .descript-technologies .info {
+        margin: 10px 10px;
+    }
+
+    .section-additional-services .title h2, .section-helpful-information .title h2 {
+        padding-top: 35px;
+        font-size: 25px;
+        padding-bottom: 40px;
+        line-height: 24px;
+    }
+
+    .section-additional-services .title h2:before, .section-helpful-information .title h2:before {
+        height: 50px;
+        margin-top: -10px;
+        width: 140px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn p {
+        margin-top: 15px;
+    }
+
+    .section-guarantees .block-descript h2 {
+        font-size: 25px;
+        line-height: 24px;
+        margin: 30px 0 30px 50px;
+    }
+
+    .section-guarantees .block-descript .list-guarantees .item .pict {
+        width: 40px;
+        height: 40px;
+        /*text-align: center;*/
+        /*margin: 0 auto 50px auto;*/
+    }
+
+    .section-guarantees .block-descript .list-guarantees .item p {
+        margin: 0 0 0 50px;
+        line-height: 15px;
+        font-size: 13px;
+    }
+
+    .section-guarantees .block-descript {
+        padding: 0;
+    }
+
+    .section-guarantees .block-descript .list-guarantees .item {
+        margin-bottom: 55px;
+    }
+
+    .btn-offer {
+        width: 220px;
+        height: 45px;
+    }
+
+    .section-guarantees .found-company .found-relocation .pict {
+        width: 35px;
+        margin-right: 20px;
+        margin-top: 20px;
+        position: absolute;
+    }
+
+    .section-guarantees .found-company .found-relocation {
+        margin: 0 15px 25px 15px;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        margin: 35px 0 0 0;
+    }
+
+    .section-guarantees .found-company .found-relocation h3 {
+        font-size: 16px;
+        margin-right: 30px;
+        line-height: 20px;
+        margin-left: 40px;
+    }
+
+    .section-guarantees .block-descript .list-guarantees .item {
+        height: 100%;
+    }
+
+    .section-different-technologies .list-technologies .all-block {
+        padding-bottom: 10px;
+        height: 70px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn {
+        position: relative;
+        height: 50px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn p {
+        margin-top: 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn {
+        width: 155px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        width: 285px;
+        margin: 0 auto;
+    }
+
+    .section-how-working .title {
+        padding-bottom: 0;
+    }
+
+    .section-guarantees .found-company {
+        margin-bottom: 35px;
+    }
+
+    .section-different-technologies .list-technologies .all-block .name-techn p {
+        line-height: 16px;
+    }
+
+    .section-different-technologies .list-technologies .icon_arrow:after {
+        bottom: -10px;
+    }
+
+    .section-different-technologies .list-technologies {
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 350px) {
+
+    .section-guarantees .block-descript .list-guarantees .item {
+        margin-bottom: 55px;
+    }
+
+    .section-different-technologies .list-technologies .info-techn {
+        width: 260px;
+        margin: 0;
+    }
+}

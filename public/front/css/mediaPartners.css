@@ -1,0 +1,483 @@
+@media (max-width: 1600px) {
+
+    .wrapper-table-row .wrapper-table-col .table-col-l {
+        width: 47%;
+        margin: 15px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .section-partner-top .title {
+        width: 800px;
+        padding-left: 200px;
+
+    }
+
+    .section-partner-top .title h2 {
+        font-size: 35px;
+        line-height: 38px;
+    }
+
+    .section-partner-top .title ul li {
+        font-size: 16px;
+        line-height: 18px;
+    }
+
+    .section-partner-top .contact {
+        width: 775px;
+    }
+
+    .section-advantages .list-advantages .item .col-icon {
+        height: 85px;
+    }
+
+    .section-advantages .list-advantages .item .col-icon .info h4 {
+        font-size: 14px;
+        line-height: 18px;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .section-become-partner .step .foto {
+        width: 285px;
+        height: 195px;
+    }
+
+    .section-become-partner .step .name {
+        width: 285px;
+    }
+
+    .section-become-partner {
+        background-position-y: -6.5%;
+        /*background-size: contain;*/
+    }
+
+    .section-become-partner .step .name .rigth-block p {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .section-partner-top .mob_partners {
+        margin-left: -165px;
+        height: 655px;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-l {
+        width: 46%;
+        margin: 15px 15px 15px 15px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .section-partner-top .contact {
+        width: 560px;
+    }
+
+    .section-advantages .list-advantages .item .col-icon {
+        display: block;
+    }
+
+    .section-advantages .list-advantages .item .col-icon .icon {
+        margin: 0 auto;
+    }
+
+    .section-advantages .list-advantages .item .info {
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    .section-advantages .list-advantages .item .col-icon {
+        height: 120px;
+    }
+
+    .section-advantages .list-advantages .item .text p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .section-advantages .advantages-for-partners p {
+        margin: 35px 35px;
+    }
+
+    .section-become-partner .step .foto {
+        width: 210px;
+        height: 145px;
+    }
+
+    .section-become-partner .step .name {
+        width: 210px;
+    }
+
+    .section-become-partner {
+        background-position-y: -170%;
+    }
+
+    .section-become-partner .step .name {
+        height: 100px;
+    }
+
+    .section-become-partner .arrrow-step {
+        bottom: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .section-partner-top .title {
+        width: 690px;
+        padding-left: 265px;
+        height: 470px;
+        padding-top: 45px;
+    }
+
+    .section-partner-top .mob_partners {
+        margin-left: -182px;
+        height: 690px;
+    }
+
+    .section-partner-top .contact {
+        width: 560px;
+    }
+
+    .section-become-partner .step .foto {
+        width: 210px;
+        height: 145px;
+    }
+
+    .section-become-partner .step .name {
+        width: 210px;
+    }
+
+    .section-become-partner {
+        background-position-y: -13.5%;
+    }
+
+    .section-become-partner .step .name {
+        height: 100px;
+    }
+
+    .section-become-partner .arrrow-step {
+        bottom: 40px;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-l {
+        margin: 15px 15px 15px 10px;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-l {
+        width: 46%;
+    }
+}
+
+@media (max-width: 767px) {
+    .section-advantages .list-advantages .item .col-icon .info h4 {
+        text-align: center;
+    }
+
+    .section-partner-top .mob_partners {
+        display: none;
+    }
+
+    .section-partner-top .title {
+        width: 100%;
+        padding-left: 30px;
+        height: 100%;
+    }
+
+    .section-partner-top .title h2 {
+        font-size: 28px;
+        line-height: 28px;
+    }
+
+    .section-partner-top .mob_man {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .section-partner-top .title {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .section-partner-top .contact {
+        width: 100%;
+    }
+
+    .contact-partner {
+        margin-bottom: 0;
+    }
+
+    .section-advantages .title h2 {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .section-advantages .title h2:before {
+        width: 200px;
+        margin-top: -10px;
+    }
+
+    .section-advantages .list-advantages .item .text p {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .section-advantages .list-advantages .item .col-icon {
+        height: 100%;
+    }
+
+    .section-become-partner {
+        background-position-y: 100%;
+    }
+
+    .section-become-partner {
+        background: inherit;
+    }
+
+    .section-become-partner .title h2 {
+        color: #000;
+    }
+
+    .section-advantages .advantages-for-partners {
+        margin-bottom: 25px;
+    }
+
+    .section-become-partner .title h2 {
+        margin: 20px auto 40px auto;
+    }
+
+    .section-become-partner .step .foto {
+        width: 350px;
+        height: 240px;
+        margin: 0 auto;
+    }
+
+    .section-become-partner .step .name {
+        width: 350px;
+        margin: 0 auto;
+    }
+
+    .section-become-partner .arrrow-step {
+        position: absolute;
+        width: 12px;
+        height: 22px;
+        right: 50%;
+        bottom: -25px;
+        transform: rotate(-270deg);
+    }
+
+    .section-answers .title h2 {
+        margin: 20px auto 40px auto;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .section-answers .title h2:before {
+        height: 105px;
+        margin-top: -15px;
+    }
+}
+
+@media (max-width: 640px) {
+    .wrapper-table {
+        padding: 35px 15px 75px 15px;
+    }
+
+    .table-col-bb, .table-col-br {
+        display: block;
+    }
+
+    .wrapper-table-row .wrapper-table-col {
+        display: block;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .wrapper-table .wrapper-table-container {
+        display: none;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-l, .table-col-bb, .table-col-br, .wrapper-table-row .wrapper-table-col .table-col-s, .table-col-bb, .table-col-br, .wrapper-table-row .wrapper-table-col .table-col-r {
+        width: 100%;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-l {
+        margin-left: 0;
+    }
+
+    .wrapper-table {
+        margin: 25px 0;
+        border: 8px solid #e2e5f4;
+        padding-bottom: 30px;
+    }
+
+    .plan-business {
+        margin-top: 0;
+    }
+
+    .basic_plan {
+        width: 230px;
+        margin-top: -50px;
+        margin-bottom: 5px;
+    }
+
+    .frame p {
+        margin-bottom: 40px;
+    }
+
+    .section-answers .tabs_answers .answer_info {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-r, .wrapper-table-row .wrapper-table-col .table-col-s {
+        color: #80849b;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-become-partner .step .foto {
+        width: 250px;
+        height: 170px;
+    }
+
+    .section-become-partner .step .name {
+        width: 250px;
+    }
+
+    .section-become-partner .title h2 {
+        margin: 5px auto 30px auto;
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .section-advantages .title h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .section-advantages .title h2:before {
+        height: 70px;
+    }
+
+    .section-partner-top .title ul li {
+        margin-bottom: 10px;
+    }
+
+    .section-advantages .advantages-for-partners p {
+        margin: 15px 15px;
+    }
+
+    .section-partner-top .contact-partner {
+        width: 230px;
+        margin-bottom: 0;
+
+    }
+
+    .section-partner-top .title h2 {
+        font-size: 25px;
+        line-height: 25px;
+    }
+
+    .section-partner-top .title ul li {
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .section-answers .title h2 {
+        margin: 20px auto 40px auto;
+        font-size: 25px;
+        line-height: 25px;
+        padding-top: 15px;
+        padding-bottom: 5px;
+    }
+
+    .section-answers .title h2:before {
+        height: 55px;
+        margin-top: 0;
+        width: 160px;
+    }
+
+    .section-answers .tabs_answers h4 {
+        font-size: 16px;
+        line-height: 20px;
+        padding: 10px 30px 10px 10px;
+    }
+
+    .section-answers .tabs_answers h4:before, .section-answers .tabs_answers .answer_info:before {
+        width: 14px;
+        height: 18px;
+    }
+
+    .section-answers .more-info-partners {
+        margin: 20px auto 35px auto;
+    }
+
+    .section-answers .tabs_answers .all .answer_title h4 {
+        padding: 10px 20px 10px 10px;
+        font-size: 15px;
+        line-height: 18px;
+    }
+
+    .section-answers .tabs_answers .all .answer_title .arrow {
+        width: 9px;
+        height: 16px;
+        top: 12px;
+    }
+
+    .section-answers .tabs_answers .all .answer_info {
+        margin-left: 15px;
+        margin-right: 10px;
+        position: relative;
+    }
+
+    .section-answers .tabs_answers .all .answer_info:before {
+        width: 9px;
+        height: 16px;
+        right: -8px;
+    }
+
+    .section-answers .tabs_answers .all .answer_info p {
+        margin-right: 10px;
+    }
+
+    .section-answers .tabs_answers .all .answer_info p {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .wrapper-table-row .wrapper-table-col .table-col-r, .wrapper-table-row .wrapper-table-col .table-col-s {
+        color: #2f3233;
+    }
+}
+
+@media (max-width: 350px) {
+    .section-partner-top .title ul li {
+        font-size: 13px;
+        line-height: 15px;
+    }
+
+    .section-partner-top .title {
+        padding-left: 20px;
+    }
+
+    .section-partner-top .title ul li {
+        margin-left: 0;
+    }
+
+    .section-partner-top .title ul {
+        padding-left: 15px;
+    }
+
+    .section-partner-top .title ul li:before {
+        margin-left: -15px;
+    }
+
+    .section-partner-top .title h2 {
+        margin-bottom: 25px;
+    }
+}

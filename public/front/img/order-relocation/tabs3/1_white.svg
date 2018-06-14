@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 480 480" style="enable-background:new 0 0 480 480;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+</style>
+<rect x="232" y="400" class="st0" width="16" height="16"/>
+<path class="st0" d="M472,416h-8V128c0-17.7-14.3-32-32-32h-48V32c0-17.7-14.3-32-32-32H128c-17.7,0-32,14.3-32,32v64H48
+	c-17.7,0-32,14.3-32,32v288H8c-4.4,0-8,3.6-8,8v24c0,17.7,14.3,32,32,32h416c17.7,0,32-14.3,32-32v-24C480,419.6,476.4,416,472,416z
+	 M128,344h224c17.7,0,32-14.3,32-32V144h32v224H64V144h32v168C96,329.7,110.3,344,128,344z M112,80h256v232c0,8.8-7.2,16-16,16H128
+	c-8.8,0-16-7.2-16-16V80z M128,16h224c8.8,0,16,7.2,16,16v32H112V32C112,23.2,119.2,16,128,16z M32,128c0-8.8,7.2-16,16-16h48v16H56
+	c-4.4,0-8,3.6-8,8v240c0,4.4,3.6,8,8,8h368c4.4,0,8-3.6,8-8V136c0-4.4-3.6-8-8-8h-40v-16h48c8.8,0,16,7.2,16,16v288H312
+	c-2.1,0-4.2,0.8-5.7,2.3L292.7,432H187.3l-13.7-13.7c-1.5-1.5-3.5-2.3-5.7-2.3H32V128z M464,448c0,8.8-7.2,16-16,16H32
+	c-8.8,0-16-7.2-16-16v-16h148.7l13.7,13.7c1.5,1.5,3.5,2.3,5.7,2.3h112c2.1,0,4.2-0.8,5.7-2.3l13.7-13.7H464V448z"/>
+<rect x="167.5" y="220" class="st0" width="147.5" height="16"/>
+<rect x="167.5" y="156" class="st0" width="147.5" height="16"/>
+<rect x="192.1" y="124" class="st0" width="122.9" height="16"/>
+<rect x="167.5" y="252" class="st0" width="136.2" height="16"/>
+<rect x="192.1" y="188" class="st0" width="122.9" height="16"/>
+<rect x="128" y="32" class="st0" width="16" height="16"/>
+<rect x="160" y="32" class="st0" width="16" height="16"/>
+<rect x="192" y="32" class="st0" width="16" height="16"/>
+<rect x="165" y="188" class="st0" width="17.3" height="16"/>
+<rect x="165" y="124" class="st0" width="17.3" height="16"/>
+</svg>
