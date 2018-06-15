@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
-
+    public $locales = [];
+    public $statuses = [];
 
     public function __construct()
     {
@@ -18,34 +20,49 @@ class PostController extends Controller
         $this->middleware('permission:posts-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:posts-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:posts-delete', ['only' => ['destroy']]);
+
+
+        $this->locales = config('translatable.locales_named');
+        $this->statuses = Post::getStatuses();
     }
 
     public function index(Request $request)
     {
-        $posts = Post::orderBy('id','desc')->paginate(5);
+        $posts = Post::orderBy('id', 'desc')->paginate(5);
         return view('admin.blog.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
 
     public function create()
     {
-        return view('admin.blog.create', compact('posts'));
+        $locales = $this->locales;
+        $statuses = $this->statuses;
+        return view('admin.blog.create', compact('locales', 'statuses'));
     }
 
-
-    public function store(Request $request)
+    public function newPost($request)
     {
         $user = Auth::user();
         $post = $user->posts()->create([
-            'status' => $request->input('status'),
+            'status' => $request->input('status') ? $request->input('status') : Post::STATUS_PROCESSING,
         ]);
-//        dd($request->input('title'));
-        foreach (['en', 'de', 'ru'] as $locale) {
-            $post->translateOrNew($locale)->title = $request->input('title');
-            $post->translateOrNew($locale)->description = $request->input('description');
-            $post->translateOrNew($locale)->content = $request->input('content');
+        $this->setTranslations($post, $request);
+        return $post;
+    }
+
+    public function setTranslations($post, $request)
+    {
+        foreach ($this->locales as $key => $locales) {
+            $post->translateOrNew($key)->title = $request->input($key . '-title');
+            $post->translateOrNew($key)->description = $request->input($key . '-description');
+            $post->translateOrNew($key)->content = $request->input($key . '-content');
         }
         $post->save();
+    }
+
+    public function store(Request $request)
+    {
+        $this->newPost($request);
         return redirect()->route('posts.index');
     }
 
@@ -64,14 +81,16 @@ class PostController extends Controller
 
     public function update(Request $request, Post $post)
     {
-        $post->status = $request->input('status');
-        foreach (['de', 'en', 'ru'] as $locales) {
+        $post->status = $request->input('status') ? $request->input('status') : $this->statuses[0];
 
-            $post->translateOrNew($locales)->title = $request->input('title');
-            $post->translateOrNew($locales)->description = $request->input('description');
-            $post->translateOrNew($locales)->content = $request->input('content');
+        foreach ($this->locales as $key => $locales) {
+            $post->translateOrNew($key)->title = $request->innput($key . '-title');
+            $post->translateOrNew($key)->description = $request->input($key . '-description');
+            $post->translateOrNew($key)->content = $request->iput($key . '-content');
         }
+
         $post->save();
+
         return redirect()->route('posts.index');
     }
 

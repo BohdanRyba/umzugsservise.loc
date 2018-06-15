@@ -239,6 +239,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="pagination">
+                        {{$posts->links()}}
                         <a class="arrow-left" href="#"></a>
                         <a class="active number" href="#">1</a>
                         <a class="number" href="#">2</a>

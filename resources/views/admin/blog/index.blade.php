@@ -28,6 +28,7 @@
                 <th>No</th>
                 <th>Title</th>
                 <th>User</th>
+                <th>Status</th>
                 <th width="280px">Action</th>
             </tr>
             @foreach ($posts as $post)
@@ -35,6 +36,14 @@
                     <td>{{ ++$i }}</td>
                     <td>{{ $post->title }}</td>
                     <td>{{ $post->user->name }}</td>
+                    <td><label class="badge
+                                @if($post->status == 'processing')
+                                badge-warning
+                                @elseif($post->status == 'published')
+                                badge-success
+                                @endif">{{ $post->status }}
+                        </label>
+                    </td>
                     <td>
                         <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
                             <a class="btn btn-info" href="{{ route('posts.show',$post->id) }}">Show</a>

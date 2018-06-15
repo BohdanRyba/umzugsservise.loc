@@ -16,6 +16,11 @@ return [
         'ru'
     ],
 
+    'locales_named' => [
+        'de' => 'German',
+        'en' => 'English',
+        'ru' => 'Russian',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Locale separator
