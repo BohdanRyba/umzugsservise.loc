@@ -27,6 +27,7 @@
             <tr>
                 <th>No</th>
                 <th>Title</th>
+                <th>Imaqe</th>
                 <th>User</th>
                 <th>Status</th>
                 <th width="280px">Action</th>
@@ -35,13 +36,15 @@
                 <tr>
                     <td>{{ ++$i }}</td>
                     <td>{{ $post->title }}</td>
+                    <td><img width="180px" src="http://umzugsservise.loc/{{ $post->attachments->filePath }}"
+                             alt="{{$post->attachments->fileName}}"></td>
                     <td>{{ $post->user->name }}</td>
                     <td><label class="badge
                                 @if($post->status == 'processing')
-                                badge-warning
-                                @elseif($post->status == 'published')
-                                badge-success
-                                @endif">{{ $post->status }}
+                            badge-warning
+@elseif($post->status == 'published')
+                            badge-success
+@endif">{{ $post->status }}
                         </label>
                     </td>
                     <td>

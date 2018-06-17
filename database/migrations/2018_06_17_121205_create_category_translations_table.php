@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTranslationsTable extends Migration
+class CreateCategoryTranslationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,15 @@ class CreatePostTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_translations', function (Blueprint $table) {
+        Schema::create('category_translations', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('post_id');
+            $table->unsignedInteger('category_id');
             $table->string('locale')->index();
-            $table->string('title', 255);
-            $table->text('description');
-            $table->longText('content');
-            $table->unique(['post_id', 'locale']);
-
-            $table->foreign('post_id')
+            $table->string('name', 255);
+            $table->unique(['category_id', 'locale']);
+            $table->foreign('category_id')
                 ->references('id')
-                ->on('posts')
+                ->on('categories')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->timestamps();
@@ -38,6 +35,6 @@ class CreatePostTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_translations');
+        Schema::dropIfExists('category_translations');
     }
 }

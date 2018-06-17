@@ -17,10 +17,6 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('status')->default('processing');
             $table->unsignedInteger('user_id');
-            $table->string('postImg')->nullable();
-            $table->string('postImgMime')->nullable();
-            $table->string('postImgName')->nullable();
-            $table->string('postImgSize')->nullable();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')

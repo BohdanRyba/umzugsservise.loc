@@ -15,7 +15,7 @@ class Post extends Model
 
     public $translatedAttributes = ['title', 'description', 'content'];
 
-    protected $fillable = ['status', 'user_id', 'postImg', 'postImgMime', 'postImgName', 'postImgSize'];
+    protected $fillable = ['status', 'user_id'];
 
     public static function getStatuses()
     {
@@ -23,6 +23,16 @@ class Post extends Model
             Post::STATUS_PROCESSING => 'Processing',
             Post::STATUS_PUBLISHED => 'Published',
         ];
+    }
+
+    public function attachments()
+    {
+        return $this->hasOne(PostAttachments::class);
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class,'post_categories');
     }
 
     public function user()

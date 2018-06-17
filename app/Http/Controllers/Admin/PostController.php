@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PostRequest;
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostAttachments;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -28,26 +31,53 @@ class PostController extends Controller
 
     public function index(Request $request)
     {
-        $posts = Post::orderBy('id', 'desc')->paginate(5);
-        return view('admin.blog.index', compact('posts'))->with('i', ($request->input('page', 1) - 1) * 5);
+        $posts = Post::with('attachments')->orderBy('id', 'desc')->paginate(5);
+        return view('admin.blog.index', compact('posts'))
+            ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
 
     public function create()
     {
+        $categories = Category::all();
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.blog.create', compact('locales', 'statuses'));
+        return view('admin.blog.create', compact('locales', 'statuses', 'categories'));
     }
 
-    public function newPost($request)
+    public function newPost(Request $request)
     {
         $user = Auth::user();
         $post = $user->posts()->create([
             'status' => $request->input('status') ? $request->input('status') : Post::STATUS_PROCESSING,
         ]);
+        $post->categories()->attach($request->input('categories'));
+        $this->uploadImage($request, $post);
         $this->setTranslations($post, $request);
         return $post;
+    }
+
+    public function uploadImage(Request $request, $post)
+    {
+        if ($request->hasFile('post_img')) {
+            $file = $request->file('post_img');
+            $fileName = $file->getClientOriginalName();
+            $fileSize = $file->getSize();
+            $fileExtension = $file->getClientOriginalExtension();
+            $fileMime = $file->getClientMimeType();
+            $image = new \App\Models\PostAttachments([
+                'post_id' => $post->id,
+                'fileExtension' => $fileExtension,
+                'fileName' => $fileName,
+                'fileMime' => $fileMime,
+                'fileSize' => $fileSize,
+                'filePath' => 'public/storage/blog/' . $fileExtension . '/' . Storage::disk('blog_' . $fileExtension)
+                        ->put('', $file)
+            ]);
+            $image->save();
+        } else {
+            return;
+        }
     }
 
     public function setTranslations($post, $request)
@@ -100,4 +130,5 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('posts.index');
     }
+
 }
