@@ -54,6 +54,36 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'blog_jpeg' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/blog/jpeg'),
+            'url' => env('APP_URL').'/storage/blog/jpeg',
+            'visibility' => 'public',
+        ],
+        'blog_png' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/blog/png'),
+            'url' => env('APP_URL').'/storage/blog/png',
+            'visibility' => 'public',
+        ],
+        'blog_jpg' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/blog/jpg'),
+            'url' => env('APP_URL').'/storage/blog/jpg',
+            'visibility' => 'public',
+        ],
+        'blog_gif' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/blog/gif'),
+            'url' => env('APP_URL').'/storage/blog/gif',
+            'visibility' => 'public',
+        ],
+        'blog_svg' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/blog/svg'),
+            'url' => env('APP_URL').'/storage/blog/svg',
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',

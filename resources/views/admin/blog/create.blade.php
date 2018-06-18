@@ -51,6 +51,7 @@
                         </div>
                     </div>
                 </div>
+
                 @foreach($locales as $key => $locale)
                     <div class="tab-pane" id="{{$key}}" role="tabpanel">
                         <div class="row">
@@ -79,21 +80,29 @@
                         </div>
                     </div>
                 @endforeach
-            <div class="tab-pane active" id="options" role="tabpanel">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Status:</strong>
-                        <select name="status" class="custom-select">
-                            @foreach($statuses as $key=>$status)
-                                <option value="{{$key}}">{{$status}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                <div class="tab-pane" id="options" role="tabpanel">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Category:</strong>
+                                <select multiple name="categories[]" class="custom-select">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <strong>Status:</strong>
+                            <select name="status" class="custom-select">
+                                @foreach($statuses as $key=>$status)
+                                    <option value="{{$key}}">{{$status}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
 
         </form>
