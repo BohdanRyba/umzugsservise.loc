@@ -15,6 +15,7 @@ Route::group(['middleware' => ['role:Admin']], function () {
             Route::resource('roles', 'RoleController');
             Route::resource('users', 'UserController');
             Route::resource('posts', 'PostController');
+            Route::resource('categories', 'CategoryController');
             Route::resource('perms', 'PermissionController')->except(['edit', 'update']);
         });
     });
