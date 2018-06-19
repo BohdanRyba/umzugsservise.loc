@@ -26,4 +26,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->hasRole('Admin'); // this looks for an admin column in your users table
+    }
 }

@@ -21,7 +21,6 @@
         <table class="table table-bordered">
             <tr>
                 <th>No</th>
-
                 <th>Title</th>
                 <th>Status</th>
                 <th width="280px">Action</th>

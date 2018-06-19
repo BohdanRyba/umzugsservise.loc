@@ -12,13 +12,14 @@ Route::prefix('blog')->group(function () {
     Route::get('/{alias}', 'BlogController@index')->name('blog.category');
 });
 
-Route::group(['middleware' => ['role:Admin'],'namespace'=>'Admin'], function () {
-        Route::get('admin-panel', 'AdminController@index')->name('admin.dashboard');
-        Route::prefix('admin-panel')->group(function () {
-            Route::resource('roles', 'RoleController');
-            Route::resource('users', 'UserController');
-            Route::resource('posts', 'PostController');
-            Route::resource('categories', 'CategoryController');
-            Route::resource('perms', 'PermissionController')->except(['edit', 'update']);
-        });
+Route::group(['middleware' => ['role:Admin'], 'namespace' => 'Admin'], function () {
+    Route::get('admin-panel', 'AdminController@index')->name('admin.dashboard');
+    Route::prefix('admin-panel')->group(function () {
+        Route::get('login', 'AdminController@login')->name('admin.login');
+        Route::resource('roles', 'RoleController');
+        Route::resource('users', 'UserController');
+        Route::resource('posts', 'PostController');
+        Route::resource('categories', 'CategoryController');
+        Route::resource('perms', 'PermissionController')->except(['edit', 'update']);
+    });
 });
