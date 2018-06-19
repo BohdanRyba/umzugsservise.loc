@@ -86,11 +86,11 @@ class PostController extends AdminController
 
     public function setTranslations($post, $request)
     {
-        foreach ($this->locales as $key => $locales) {
-            $post->translateOrNew($key)->title = $request->input($key . '-title');
-            $post->translateOrNew($key)->description = $request->input($key . '-description');
-            $post->translateOrNew($key)->content = $request->input($key . '-content');
-        }
+        $locale = $request->input('locale');
+            $post->translateOrNew($locale)->title = $request->input('title');
+            $post->translateOrNew($locale)->description = $request->input( 'description');
+            $post->translateOrNew($locale)->content = $request->input('content');
+
         $post->save();
     }
 

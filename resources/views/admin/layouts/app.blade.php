@@ -23,6 +23,6 @@
 </head>
 @yield('navigation')
 @yield('content')
-@yield('footer')
 @yield('scripts')
+@yield('footer')
 </html>

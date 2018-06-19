@@ -34,9 +34,11 @@ class CategoryController extends AdminController
 
     public function create()
     {
+        $categories = $this->adminCategories;
+
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.categories.create', compact('locales', 'statuses'));
+        return view('admin.categories.create', compact('locales', 'statuses','categories'));
     }
 
     public function createCategory(Request $request)
@@ -68,14 +70,18 @@ class CategoryController extends AdminController
 
     public function show(Category $category)
     {
-        return view('admin.categories.show', compact('category'));
+        $categories = $this->adminCategories;
+
+        return view('admin.categories.show', compact('category','categories'));
     }
 
     public function edit(Category $category)
     {
+        $categories = $this->adminCategories;
+
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.categories.edit', compact('locales', 'statuses', 'category'));
+        return view('admin.categories.edit', compact('locales', 'statuses', 'category','categories'));
     }
 
     public function update(Request $request, Category $category)

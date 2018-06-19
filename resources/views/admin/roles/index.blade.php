@@ -14,6 +14,7 @@
                 </li>
                 <li class="breadcrumb-item active">Roles</li>
             </ol>
+            <a href="{{route('roles.create')}}" role="button" class="btn btn-info mb-3">Create</a>
 
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">

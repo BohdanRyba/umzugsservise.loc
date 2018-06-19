@@ -35,13 +35,13 @@
                 <div class="col-lg-2 col-md-2 col-sm-4  col-xs-4">
                     <div class="entrance">
                         <div class="language">
-                            <a href="#">
+                            <a href="{{route('language','en')}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_United_Kingdom.svg')}}" alt="">
                             </a>
-                            <a href="#">
+                            <a href="{{route('language','de')}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_Germany.svg')}}" alt="">
                             </a>
-                            <a class="active" href="#">
+                            <a href="{{route('language','ru')}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_Russia.svg')}}" alt="">
                             </a>
                         </div>

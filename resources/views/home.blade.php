@@ -9,7 +9,7 @@
                 <div class="col-sm-12">
                     <div class="title-site">
                         <h2 class="number_one"> #1</h2>
-                        <h1 class="animate_text">Umzugsunternehmen in Deutschland</h1>
+                        <h1 class="animate_text">Umzugsunternehmen in Deutschland {{__('app.test')}}</h1>
                         <p>Переезд</p>
                         <p>Хранение вещей</p>
                         <p>Сопутствующие услуги</p>

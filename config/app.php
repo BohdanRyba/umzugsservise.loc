@@ -156,6 +156,9 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+
+        Vluzrmos\LanguageDetector\Providers\LanguageDetectorServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         /*
          * Application Service Providers...
          */

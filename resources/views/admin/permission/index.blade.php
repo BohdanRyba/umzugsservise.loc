@@ -14,11 +14,8 @@
                 </li>
                 <li class="breadcrumb-item active">Permisions</li>
             </ol>
-            @if ($message = Session::get('success'))
-                <div class="alert alert-success">
-                    <p>{{ $message }}</p>
-                </div>
-            @endif
+            <a href="{{route('perms.create')}}" role="button" class="btn btn-info mb-3">Create</a>
+
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <p>{{ $message }}</p>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+Route::get('language/{lang}', 'LangController@change')->name('language');
 
 Auth::routes();
 
@@ -22,4 +22,5 @@ Route::group(['middleware' => ['role:Admin'], 'namespace' => 'Admin'], function 
         Route::resource('categories', 'CategoryController');
         Route::resource('perms', 'PermissionController')->except(['edit', 'update']);
     });
+
 });

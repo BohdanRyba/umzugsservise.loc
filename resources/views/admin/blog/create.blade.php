@@ -40,53 +40,57 @@
                         <strong>Name:</strong>
                         <input type="file" name="post_img" class="form-control">
                     </div>
+                    <div class="form-group">
+                        <strong>Category:</strong>
+                        <select multiple name="categories[]" class="custom-select">
+                            @foreach($postCategories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <strong>Locale:</strong>
+                        <select name="locale" class="custom-select">
+                            @foreach($locales as $key=>$locale)
+                                <option value="{{$key}}">{{$locale}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                    @foreach($locales as $key => $locale)
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Name:</strong>
-                                    <input type="text" name="{{$key}}-title" value="{{ old($key.'-title') }}"
-                                           class="form-control"
-                                           placeholder="Title">
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Description:</strong>
-                                    <textarea class="form-control" style="height:150px" name="{{$key}}-description"
-                                              placeholder="Description">{{old($key.'-description')}}</textarea>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="form-group">
-                                    <strong>Content:</strong>
-                                    <textarea class="form-control" style="height:150px" name="{{$key}}-content"
-                                              placeholder="Content">{{ old($key.'-content') }}</textarea>
-                                </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Name:</strong>
+                                <input type="text" name="title" value="{{ old('title') }}"
+                                       class="form-control"
+                                       placeholder="Title">
                             </div>
                         </div>
-                    @endforeach
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Category:</strong>
-                            <select multiple name="categories[]" class="custom-select">
-                                @foreach($postCategories as $category)
-                                    <option value="{{$category->id}}">{{$category->name}}</option>
-                                @endforeach
-                            </select>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Description:</strong>
+                                <textarea class="form-control" style="height:150px" name="description"
+                                          placeholder="Description">{{old('description')}}</textarea>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <strong>Status:</strong>
-                            <select name="status" class="custom-select">
-                                @foreach($statuses as $key=>$status)
-                                    <option value="{{$key}}">{{$status}}</option>
-                                @endforeach
-                            </select>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Content:</strong>
+                                <textarea class="form-control" style="height:150px" name="content"
+                                          placeholder="Content">{{ old('content') }}</textarea>
+                            </div>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
+                    </div>
+                    <div class="form-group">
+                        <strong>Status:</strong>
+                        <select name="status" class="custom-select">
+                            @foreach($statuses as $key=>$status)
+                                <option value="{{$key}}">{{$status}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </div>
 
