@@ -1,8 +1,13 @@
-<li class="nav-item"><a href="#" class="nav-link">{{ $project['name'] }}</a></li>
-@if (count($project['children']) > 0)
+<li class="nav-item"><a href="{{route($category['route'])}}" class="nav-link">
+
+        <i class="fa fa-fw {{$category['icon']}}"></i>
+        <span class="nav-link-text">{{ $category['name'] }}</span>
+
+    </a></li>
+@if (count($category['children']) > 0)
     <ul class="sidenav-second-level ml-4" style="list-style: none;">
-        @foreach($project['children'] as $project)
-            @include('admin.partials.menu', $project)
+        @foreach($category['children'] as $category)
+            @include('admin.partials.menu', $category)
         @endforeach
     </ul>
 @endif

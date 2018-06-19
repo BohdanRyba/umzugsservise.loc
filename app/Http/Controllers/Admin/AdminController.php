@@ -9,12 +9,17 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
+    public $adminCategories = [];
 
+    public function __construct()
+    {
+        $this->adminCategories = NavMenuController::$categories;
+    }
 
     public function index(Request $request)
     {
-        $projects = NavMenuController::$a;
-        return view('admin.dashboard', compact('projects'));
+        $categories = $this->adminCategories;
+        return view('admin.dashboard', compact('categories'));
     }
 
     public function login(Request $request)

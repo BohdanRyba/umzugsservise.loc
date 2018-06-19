@@ -11,30 +11,39 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends AdminController
 {
+
+
     public function __construct()
     {
+        parent::__construct();
+
         $this->middleware('permission:users-list');
         $this->middleware('permission:users-show', ['only' => ['show']]);
         $this->middleware('permission:users-create', ['only' => ['create', 'store']]);
         $this->middleware('permission:users-edit', ['only' => ['edit', 'update']]);
         $this->middleware('permission:users-delete', ['only' => ['destroy']]);
+
     }
+
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
-        return view('admin.users.index',compact('data'))
+        $categories = $this->adminCategories;
+        $data = User::orderBy('id', 'DESC')->paginate(5);
+        return view('admin.users.index', compact('data', 'categories'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        $roles = Role::pluck('name','name')->all();
-        return view('admin.users.create',compact('roles'));
+        $categories = $this->adminCategories;
+        $roles = Role::pluck('name', 'name')->all();
+        return view('admin.users.create', compact('roles','categories'));
     }
 
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
@@ -52,25 +61,28 @@ class UserController extends AdminController
 
 
         return redirect()->route('users.index')
-            ->with('success','User created successfully');
+            ->with('success', 'User created successfully');
     }
 
     public function show($id)
     {
-        $user = User::find($id);
-        return view('admin.users.show',compact('user'));
-    }
+        $categories = $this->adminCategories;
 
+        $user = User::find($id);
+        return view('admin.users.show', compact('user','categories'));
+    }
 
 
     public function edit($id)
     {
+        $categories = $this->adminCategories;
+
         $user = User::find($id);
-        $roles = Role::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name','name')->all();
+        $roles = Role::pluck('name', 'name')->all();
+        $userRole = $user->roles->pluck('name', 'name')->all();
 
 
-        return view('admin.users.edit',compact('user','roles','userRole'));
+        return view('admin.users.edit', compact('user', 'categories','roles', 'userRole'));
     }
 
 
@@ -78,29 +90,29 @@ class UserController extends AdminController
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:users,email,'.$id,
-        'roles' => 'required'
+            'email' => 'required|email|unique:users,email,' . $id,
+            'roles' => 'required'
         ]);
 
 
         $input = $request->all();
-        if(!empty($input['password'])){
+        if (!empty($input['password'])) {
             $input['password'] = Hash::make($input['password']);
-        }else{
-            $input = array_except($input,array('password'));
+        } else {
+            $input = array_except($input, array('password'));
         }
 
 
         $user = User::find($id);
         $user->update($input);
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
+        DB::table('model_has_roles')->where('model_id', $id)->delete();
 
 
         $user->assignRole($request->input('roles'));
 
 
         return redirect()->route('users.index')
-            ->with('success','User updated successfully');
+            ->with('success', 'User updated successfully');
     }
 
 
@@ -108,6 +120,6 @@ class UserController extends AdminController
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-            ->with('success','User deleted successfully');
+            ->with('success', 'User deleted successfully');
     }
 }

@@ -5,9 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
-use App\Models\PostAttachments;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -18,6 +16,8 @@ class PostController extends AdminController
 
     public function __construct()
     {
+        parent::__construct();
+
         $this->middleware('permission:posts-list');
         $this->middleware('permission:posts-show', ['only' => ['show']]);
         $this->middleware('permission:posts-create', ['only' => ['create', 'store']]);
@@ -31,18 +31,22 @@ class PostController extends AdminController
 
     public function index(Request $request)
     {
+        $categories = $this->adminCategories;
+
         $posts = Post::with('attachments')->orderBy('id', 'desc')->paginate(5);
-        return view('admin.blog.index', compact('posts'))
+        return view('admin.blog.index', compact('posts','categories'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
 
     public function create()
     {
-        $categories = Category::all();
+        $categories = $this->adminCategories;
+
+        $postCategories = Category::all();
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.blog.create', compact('locales', 'statuses', 'categories'));
+        return view('admin.blog.create', compact('postCategories','locales','categories', 'statuses', 'categories'));
     }
 
     public function newPost(Request $request)
@@ -99,14 +103,15 @@ class PostController extends AdminController
 
     public function show(Post $post)
     {
-        return view('admin.blog.show', compact('post'));
+        $categories = $this->adminCategories;
+        return view('admin.blog.show', compact('post','categories'));
     }
 
 
     public function edit(Post $post)
     {
-        return view('admin.blog.edit', compact('post'));
-
+        $categories = $this->adminCategories;
+        return view('admin.blog.edit', compact('post','categories'));
     }
 
     public function update(Request $request, Post $post)

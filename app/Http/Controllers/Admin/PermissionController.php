@@ -11,6 +11,7 @@ class PermissionController extends AdminController
 
     public function __construct()
     {
+        parent::__construct();
         $this->middleware('permission:perms-list', ['only' => ['index']]);
         $this->middleware('permission:perms-show', ['only' => ['show']]);
         $this->middleware('permission:perms-create', ['only' => ['create', 'store']]);
@@ -21,14 +22,18 @@ class PermissionController extends AdminController
 
     public function index(Request $request)
     {
+        $categories = $this->adminCategories;
+
         $permissions = Permission::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.permission.index', compact('permissions'))
+        return view('admin.permission.index', compact('permissions','categories'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
-        return view('admin.permission.create');
+        $categories = $this->adminCategories;
+
+        return view('admin.permission.create',compact('categories'));
     }
 
     public function store(Request $request)
@@ -47,8 +52,9 @@ class PermissionController extends AdminController
 
     public function show($id)
     {
+        $categories = $this->adminCategories;
         $perm = Permission::findById($id);
-        return view('admin.permission.show', compact('perm'));
+        return view('admin.permission.show', compact('perm','categories'));
     }
 
 

@@ -1,59 +1,47 @@
 @extends('admin.layouts.app')
 
+@section('navigation')
+    @include('admin.partials.nav',$categories)
+@endsection
+
 @section('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 margin-tb">
-                <div class="pull-left">
-                    <h2>Add New Post</h2>
-                </div>
-                <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}"> Back</a>
-                </div>
-            </div>
-        </div>
-
-
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-
-        <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
-            {{csrf_field()}}
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#image" role="tab">Image</a>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
                 </li>
-                @foreach($locales as $key => $locale)
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#{{$key}}" role="tab">{{$locale}}</a>
-                    </li>
-                @endforeach
-                <li class="nav-item">
-                    <a class="nav-link  " data-toggle="tab" href="#options" role="tab">Options</a>
-                </li>
-            </ul>
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div class="tab-pane active" id="image" role="tabpanel">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Name:</strong>
-                            <input type="file" name="post_img" class="form-control">
-                        </div>
+                <li class="breadcrumb-item active"><a href="{{route('posts.index')}}">Posts</a></li>
+                <li class="breadcrumb-item active">Edit Posts</li>
+            </ol>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+
+            <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <strong>Name:</strong>
+                        <input type="file" name="post_img" class="form-control">
                     </div>
-                </div>
 
-                @foreach($locales as $key => $locale)
-                    <div class="tab-pane" id="{{$key}}" role="tabpanel">
+                    @foreach($locales as $key => $locale)
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -78,14 +66,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-                <div class="tab-pane" id="options" role="tabpanel">
+                    @endforeach
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Category:</strong>
-                                <select multiple name="categories[]" class="custom-select">
-                                @foreach($categories as $category)
+                            <select multiple name="categories[]" class="custom-select">
+                                @foreach($postCategories as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
@@ -103,8 +89,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </form>
+            </form>
+        </div>
     </div>
 @endsection

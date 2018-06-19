@@ -1,18 +1,24 @@
 @extends('admin.layouts.app')
 
-@section('content')
-    <div class="container">
-            <div class="row">
-                <div class="col-lg-12 margin-tb">
-                    <div class="pull-left">
-                        <h2>Edit Role</h2>
-                    </div>
-                    <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('roles.index') }}"> Back</a>
-                    </div>
-                </div>
-            </div>
+@section('navigation')
+    @include('admin.partials.nav',$categories)
+@endsection
 
+@section('content')
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item active">Users</li>
+            </ol>
+            @if ($message = Session::get('success'))
+                <div class="alert alert-success">
+                    <p>{{ $message }}</p>
+                </div>
+            @endif
 
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -50,5 +56,6 @@
                 </div>
             </div>
             {!! Form::close() !!}
+        </div>
     </div>
 @endsection

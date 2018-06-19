@@ -1,5 +1,9 @@
 @extends('admin.layouts.app')
 
+@section('navigation')
+    @include('admin.partials.nav',$categories)
+@endsection
+
 @section('content')
     <body class="bg-dark">
     <div class="container">

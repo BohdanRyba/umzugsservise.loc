@@ -15,6 +15,8 @@ class CategoryController extends AdminController
 
     public function __construct()
     {
+        parent::__construct();
+
         $this->locales = config('translatable.locales_named');
 
         $this->statuses = Category::getStatuses();
@@ -22,8 +24,11 @@ class CategoryController extends AdminController
 
     public function index(Request $request)
     {
-        $categories = Category::orderBy('id', 'desc')->paginate(10);
-        return view('admin.categories.index', compact('categories'))
+        $categories = $this->adminCategories;
+
+        $postCategories = Category::orderBy('id', 'desc')->paginate(10);
+
+        return view('admin.categories.index', compact('categories', 'postCategories'))
             ->with('i', ($request->input('page', 1) - 1) * 10);
     }
 
