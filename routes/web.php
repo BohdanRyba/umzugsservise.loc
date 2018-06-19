@@ -12,9 +12,9 @@ Route::prefix('blog')->group(function () {
     Route::get('/{alias}', 'BlogController@index')->name('blog.category');
 });
 
-Route::group(['middleware' => ['role:Admin']], function () {
+Route::group(['middleware' => ['role:Admin','auth']], function () {
     Route::namespace('Admin')->group(function () {
-        Route::get('admin-panel', 'AdminController@index')->name('admin.dashboard');
+        Route::get('admin-panel', 'AdminController@index')->middleware([''])->name('admin.dashboard');
         Route::prefix('admin-panel')->group(function () {
             Route::resource('roles', 'RoleController');
             Route::resource('users', 'UserController');
