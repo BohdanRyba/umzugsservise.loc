@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Category;
-use App\NavCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,6 +12,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->adminCategories = NavMenuController::$categories;
+        $this->middleware('admin')->except(['login']);
     }
 
     public function index(Request $request)

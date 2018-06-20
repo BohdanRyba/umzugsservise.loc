@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\User\UserCreateRequest;
+use App\Http\Requests\Admin\User\UserUpdateRequest;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -37,27 +39,21 @@ class UserController extends AdminController
     {
         $categories = $this->adminCategories;
         $roles = Role::pluck('name', 'name')->all();
-        return view('admin.users.create', compact('roles','categories'));
+        return view('admin.users.create', compact('roles', 'categories'));
     }
 
 
-    public function store(Request $request)
+    public function store(UserCreateRequest $request)
     {
-
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+        dd($request->name);
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->name),
         ]);
 
 
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-
-
-        $user = User::create($input);
-        $user->assignRole($request->input('roles'));
+        $user = $user->assignRole($request->input('roles'));
 
 
         return redirect()->route('users.index')
@@ -67,9 +63,8 @@ class UserController extends AdminController
     public function show($id)
     {
         $categories = $this->adminCategories;
-
-        $user = User::find($id);
-        return view('admin.users.show', compact('user','categories'));
+        $user = User::findOrFail($id);
+        return view('admin.users.show', compact('user', 'categories'));
     }
 
 
@@ -82,29 +77,24 @@ class UserController extends AdminController
         $userRole = $user->roles->pluck('name', 'name')->all();
 
 
-        return view('admin.users.edit', compact('user', 'categories','roles', 'userRole'));
+        return view('admin.users.edit', compact('user', 'categories', 'roles', 'userRole'));
     }
 
 
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email,' . $id,
-            'roles' => 'required'
+            'email' => 'email|unique:users,email,' . $id,
         ]);
-
-
-        $input = $request->all();
-        if (!empty($input['password'])) {
-            $input['password'] = Hash::make($input['password']);
+        if (!empty($request->password)) {
+            $request->password = Hash::make($request->password);
         } else {
-            $input = array_except($input, array('password'));
+            $request = array_except($request, ['password']);
         }
 
 
         $user = User::find($id);
-        $user->update($input);
+        $user->update($request->all());
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
 

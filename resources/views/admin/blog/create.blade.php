@@ -37,11 +37,12 @@
                 {{csrf_field()}}
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
-                        <strong>Name:</strong>
+                        <strong>Image:</strong>
                         <input type="file" name="post_img" class="form-control">
                     </div>
                     <div class="form-group">
                         <strong>Category:</strong>
+
                         <select multiple name="categories[]" class="custom-select">
                             @foreach($postCategories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
@@ -69,15 +70,23 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Description:</strong>
-                                <textarea class="form-control" style="height:150px" name="description"
-                                          placeholder="Description">{{old('description')}}</textarea>
+                                {{Form::textarea('description',old('description'),[
+                                'class'=>'form-control',
+                                'placeholder'=>'Description'
+                                ])}}
+                                {{--<textarea class="form-control" style="height:150px" name="description"--}}
+                                {{--                                          placeholder="Description">{{old('description')}}</textarea>--}}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Content:</strong>
-                                <textarea class="form-control" style="height:150px" name="content"
-                                          placeholder="Content">{{ old('content') }}</textarea>
+                                {{Form::textarea('content',old('content'),[
+                                    'class'=>'form-control',
+                                    'placeholder'=>'Content'
+                                    ])}}
+                                {{--<textarea class="form-control" style="height:150px" name="content"--}}
+                                          {{--placeholder="Content">{{ old('content') }}</textarea>--}}
                             </div>
                         </div>
                     </div>

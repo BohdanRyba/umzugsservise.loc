@@ -232,7 +232,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
-document.getElementById('logout-form').submit();" data-toggle="modal" data-target="#exampleModal">
+                        document.getElementById('logout-form').submit();" data-toggle="modal"
+                    {{--data-target="#exampleModal"--}}
+                >
                     <i class="fa fa-fw fa-sign-out"></i>{{ __('Logout') }}</a>
             </li>
             <form id="logout-form" action="{{ route('logout') }}" method="POST"

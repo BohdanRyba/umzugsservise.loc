@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\Blog\BlogCreateRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
@@ -94,7 +95,7 @@ class PostController extends AdminController
         $post->save();
     }
 
-    public function store(Request $request)
+    public function store(BlogCreateRequest $request)
     {
         $this->newPost($request);
         return redirect()->route('posts.index');
