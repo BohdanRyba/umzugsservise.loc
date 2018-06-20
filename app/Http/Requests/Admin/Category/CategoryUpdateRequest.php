@@ -13,7 +13,7 @@ class CategoryUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,20 @@ class CategoryUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'status' => 'required',
+            'de-name' => 'required',
+            'en-name' => 'required',
+            'ru-name' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'status' => 'Status is required field',
+            'de-name' => 'Deutsch Name is required field',
+            'en-name' => 'English Name is required field',
+            'ru-name' => 'Russian Name is required field',
         ];
     }
 }

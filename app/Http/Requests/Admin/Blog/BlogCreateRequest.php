@@ -43,7 +43,6 @@ class BlogCreateRequest extends FormRequest
             'content.required' => 'Content is required',
             'status.required' => 'Status is required',
             'category.required' => 'Category required',
-
         ];
     }
 }

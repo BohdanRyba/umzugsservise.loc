@@ -13,7 +13,7 @@ class PermissionsCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class PermissionsCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:permissions,name'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Permission name is required',
+            'name.unique' => 'Permission name must be unique',
+        ];
+    }
+
 }

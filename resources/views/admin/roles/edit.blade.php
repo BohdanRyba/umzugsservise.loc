@@ -12,7 +12,7 @@
                 <li class="breadcrumb-item">
                     <a href="{{route('admin.dashboard')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Users</li>
+                <li class="breadcrumb-item active">Roles</li>
             </ol>
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">

@@ -13,7 +13,7 @@ class CategoryCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,24 @@ class CategoryCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'alias' => 'required|unique:categories,alias',
+            'status' => 'required',
+            'de-name' => 'required',
+            'en-name' => 'required',
+            'ru-name' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'alias.required' => 'Alias is required field',
+            'alias.unique' => 'Category Alias must be unique',
+            'status' => 'Status is required field',
+            'de-name' => 'Deutsch Name is required field',
+            'en-name' => 'English Name is required field',
+            'ru-name' => 'Russian Name is required field',
+        ];
+    }
+
 }

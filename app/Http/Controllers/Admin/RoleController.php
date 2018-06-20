@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\Role\RoleCreateRequest;
+use App\Http\Requests\Admin\Role\RoleUpdateRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -38,18 +40,10 @@ class RoleController extends AdminController
         return view('admin.roles.create', compact('permission', 'categories'));
     }
 
-    public function store(Request $request)
+    public function store(RoleCreateRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required|unique:roles,name',
-            'permission' => 'required',
-        ]);
-
-
-        $role = Role::create(['name' => $request->input('name')]);
-        $role->syncPermissions($request->input('permission'));
-
-
+        Role::create(['name' => $request->name])
+            ->syncPermissions($request->permission);
         return redirect()->route('roles.index')
             ->with('success', 'Role created successfully');
     }
@@ -59,7 +53,11 @@ class RoleController extends AdminController
         $categories = $this->adminCategories;
 
         $role = Role::find($id);
-        $rolePermissions = Permission::join("role_has_permissions", "role_has_permissions.permission_id", "=", "permissions.id")
+        $rolePermissions = Permission::join(
+            "role_has_permissions",
+            "role_has_permissions.permission_id",
+            "=",
+            "permissions.id")
             ->where("role_has_permissions.role_id", $id)
             ->get();
 
@@ -81,12 +79,8 @@ class RoleController extends AdminController
         return view('admin.roles.edit', compact('role', 'permission', 'rolePermissions', 'categories'));
     }
 
-    public function update(Request $request, $id)
+    public function update(RoleUpdateRequest $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required',
-            'permission' => 'required',
-        ]);
 
 
         $role = Role::find($id);

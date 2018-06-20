@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Category\CategoryCreateRequest;
+use App\Http\Requests\Admin\Category\CategoryUpdateRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -61,7 +63,7 @@ class CategoryController extends AdminController
 
     }
 
-    public function store(Request $request)
+    public function store(CategoryCreateRequest $request)
     {
         $category = $this->createCategory($request);
         $this->setTranslation($category, $request);
@@ -84,7 +86,7 @@ class CategoryController extends AdminController
         return view('admin.categories.edit', compact('locales', 'statuses', 'category','categories'));
     }
 
-    public function update(Request $request, Category $category)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
         $category->status = $request->input('status') ? $request->input('status') : Category::STATUS_PROCESSING;
         $this->setTranslation($category, $request);

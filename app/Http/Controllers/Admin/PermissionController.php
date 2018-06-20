@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\Admin\Permissions\PermissionsCreateRequest;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Spatie\Permission\Models\Permission;
 
 class PermissionController extends AdminController
@@ -19,7 +19,6 @@ class PermissionController extends AdminController
         $this->middleware('permission:perms-delete', ['only' => ['destroy']]);
     }
 
-
     public function index(Request $request)
     {
         $categories = $this->adminCategories;
@@ -32,20 +31,12 @@ class PermissionController extends AdminController
     public function create()
     {
         $categories = $this->adminCategories;
-
         return view('admin.permission.create',compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(PermissionsCreateRequest $request)
     {
-        $this->validate($request, [
-            'name' => 'required|unique:roles,name',
-        ]);
-
-
-        $role = Permission::create(['name' => $request->input('name')]);
-
-
+        Permission::create(['name' => $request->name]);
         return redirect()->route('perms.index')
             ->with('success', 'Role created successfully');
     }
@@ -56,7 +47,6 @@ class PermissionController extends AdminController
         $perm = Permission::findById($id);
         return view('admin.permission.show', compact('perm','categories'));
     }
-
 
     public function destroy($id)
     {

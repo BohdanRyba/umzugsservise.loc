@@ -13,7 +13,7 @@ class RoleCreateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class RoleCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|unique:roles,name',
+            'permission' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Role name is required field',
+            'name.unique' => 'Role name must be unique',
+            'permission.required' => 'Permissions is required field',
+        ];
+    }
+
 }

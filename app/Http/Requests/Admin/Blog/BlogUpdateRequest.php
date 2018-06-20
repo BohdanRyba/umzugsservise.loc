@@ -24,7 +24,24 @@ class BlogUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'post_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'content' => 'required',
+            'status' => 'required',
+            'categories' => 'required',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'post_img.required' => 'Image is required',
+            'title.required' => 'Title is required',
+            'description.required' => 'Description is required',
+            'content.required' => 'Content is required',
+            'status.required' => 'Status is required',
+            'category.required' => 'Category required',
         ];
     }
 }
