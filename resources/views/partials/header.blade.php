@@ -19,11 +19,11 @@
                             <div>
                                 <div>
                                     <ul>
-                                        <li><a href="{{route('home')}}">Главная</a></li>
+                                        <li><a href="{{route('home',['locale'=>Session::get('locale')])}}">Главная</a></li>
                                         <li><a href="/working.php">Как мы работаем</a></li>
                                         <li><a href="/partners.php">Партнерам</a></li>
                                         <li><a href="/aboutUs.php">О нас</a></li>
-                                        <li><a href="{{route('blog.index')}}">Блог</a></li>
+                                        <li><a href="{{route('blog.index',['locale'=>App::getLocale()])}}">Блог</a></li>
                                         <li><a href="/faq.php">FAQ</a></li>
                                         <li><a href="/lk_client.php">Личный кабинет</a></li>
                                     </ul>
@@ -35,31 +35,36 @@
                 <div class="col-lg-2 col-md-2 col-sm-4  col-xs-4">
                     <div class="entrance">
                         <div class="language">
-                            <a href="{{route('language','en')}}">
+                            <a class="@if(App::getLocale() == 'en') active @endif"
+                               href="{{route('change.lang',['locale'=>'en'])}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_United_Kingdom.svg')}}" alt="">
                             </a>
-                            <a href="{{route('language','de')}}">
+                            <a class="@if(App::getLocale() == 'de') active @endif"
+                               href="{{route('change.lang',['locale'=>'de'])}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_Germany.svg')}}" alt="">
                             </a>
-                            <a href="{{route('language','ru')}}">
+                            <a class="@if(App::getLocale() == 'ru') active @endif"
+                               href="{{route('change.lang',['locale'=>'ru'])}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_Russia.svg')}}" alt="">
                             </a>
                         </div>
                         @guest
 
                             <div class="header-btn b-all">
-                                <a href="{{route('login')}}">Вход</a>
+                                <a href="{{route('login',['locale'=>App::getLocale()])}}">Вход</a>
                             </div>
                         @else
                             <div class="header-btn b-all">
-                            <a  href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
+                                <a href="{{ route('logout',['locale'=>App::getLocale()]) }}"
+                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                Выход
-                            </a>
+                                    Выход
+                                </a>
                             </div>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout',['locale'=>App::getLocale()]) }}"
+                                  method="POST"
+                                  style="display: none;">
                                 @csrf
                             </form>
                         @endguest

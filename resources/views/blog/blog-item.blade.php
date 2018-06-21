@@ -8,8 +8,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="break-menu">
-                        <a class="back" href="{{route('home')}}">Главная </a><span>|</span>
-                        <a class="back" href="{{route('blog.index')}}">Блог </a><span>|</span>
+                        <a class="back" href="{{route('home',['locale'])}}">Главная </a><span>|</span>
+                        <a class="back" href="{{route('blog.index',['locale'])}}">Блог </a><span>|</span>
                         <p>{{$post->title}}</p>
                     </div>
                 </div>

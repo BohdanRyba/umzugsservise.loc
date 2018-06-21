@@ -170,7 +170,7 @@ function mask() {
     /*----------------------------------------------------*/
     /*	Profile Phone mask https://habrahabr.ru/post/162537/
 	/*----------------------------------------------------*/
-    var maskList = $.masksSort($.masksLoad("/assets/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+    var maskList = $.masksSort($.masksLoad("/front/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
     var maskOpts = {
         inputmask: {
             definitions: {
@@ -219,7 +219,7 @@ function mask_qustion() {
     /*----------------------------------------------------*/
     /*	Profile Phone mask https://habrahabr.ru/post/162537/
 	/*----------------------------------------------------*/
-    var maskList = $.masksSort($.masksLoad("/assets/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
+    var maskList = $.masksSort($.masksLoad("/front/phone-codes.json"), ['#'], /[0-9]|#/, "mask");
     var maskOpts = {
         inputmask: {
             definitions: {

@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index()
+    public function index($locale)
     {
         $categories = Category::all();
         $posts = Post::where('status', '=', Post::STATUS_PUBLISHED)->with(['attachments'])->orderBy('id', 'desc')->paginate(1);
-//        $posts = Post::where('status', '=', Post::STATUS_PUBLISHED)->orderBy('id', 'desc')->paginate('8');
         return view('blog.index', compact('posts', 'categories'));
     }
     public function show($id)

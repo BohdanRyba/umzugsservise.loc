@@ -24,9 +24,9 @@
                         <ul class="tab-menu-blog">
                             @foreach($categories as $category)
                                 @if ($loop->first)
-                                    <li class="active"><a href="{{route('blog.index')}}">Все записи</a></li>
+                                    <li class="active"><a href="{{route('blog.index',App::getLocale())}}">Все записи</a></li>
                                 @endif
-                                <li><a href="{{route('blog.category',$category->alias)}}">{{$category->name}}</a></li>
+                                <li><a href="{{route('blog.category',['alias'=>$category->alias,'locale'=>App::getLocale()])}}">{{$category->name}}</a></li>
                             @endforeach
                         </ul>
                         <div class="tab-content">
