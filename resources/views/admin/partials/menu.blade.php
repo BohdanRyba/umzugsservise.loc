@@ -1,4 +1,4 @@
-<li class="nav-item"><a href="{{route($category['route'])}}" class="nav-link">
+<li class="nav-item"><a href="{{adminLocaleLink($category['route'])}}" class="nav-link">
 
         <i class="fa fa-fw {{$category['icon']}}"></i>
         <span class="nav-link-text">{{ $category['name'] }}</span>

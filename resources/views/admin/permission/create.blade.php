@@ -10,7 +10,7 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Users</li>
             </ol>
@@ -32,7 +32,7 @@
             @endif
 
 
-            {!! Form::open(array('route' => 'perms.store','method'=>'POST')) !!}
+            {!! Form::open(array('url' => adminLocaleLink('/perms'),'method'=>'POST')) !!}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">

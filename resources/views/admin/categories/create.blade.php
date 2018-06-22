@@ -9,9 +9,9 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('users.index')}}">Categories</a></li>
+                <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/users')}}">Categories</a></li>
                 <li class="breadcrumb-item active">Create Category</li>
             </ol>
             @if ($message = Session::get('success'))
@@ -32,7 +32,7 @@
             @endif
 
 
-            <form action="{{ route('categories.store') }}" method="post">
+            <form action="{{ adminLocaleLink('/categories') }}" method="post">
             {{csrf_field()}}
             <!-- Tab panes -->
                 <div class="form-group">

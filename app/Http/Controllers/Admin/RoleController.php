@@ -44,7 +44,7 @@ class RoleController extends AdminController
     {
         Role::create(['name' => $request->name])
             ->syncPermissions($request->permission);
-        return redirect()->route('roles.index')
+        return redirect(adminLocaleLink('/roles'))
             ->with('success', 'Role created successfully');
     }
 
@@ -91,14 +91,14 @@ class RoleController extends AdminController
         $role->syncPermissions($request->input('permission'));
 
 
-        return redirect()->route('roles.index')
+        return redirect(adminLocaleLink('/roles'))
             ->with('success', 'Role updated successfully');
     }
 
     public function destroy($id)
     {
         DB::table("roles")->where('id', $id)->delete();
-        return redirect()->route('roles.index')
+        return redirect(adminLocaleLink('/roles'))
             ->with('success', 'Role deleted successfully');
     }
 }

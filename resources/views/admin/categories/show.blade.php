@@ -9,9 +9,9 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('categories.index')}}">Categories</a></li>
+                <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/categories')}}">Categories</a></li>
                 <li class="breadcrumb-item active">Show Category {{$category->name}}</li>
             </ol>
             @if ($message = Session::get('success'))

@@ -1,6 +1,8 @@
 <?php
 
-function locale_route($route)
-{
-    dd($route);
+function localeLink($str) {
+    return '/'.app()->getLocale().$str;
+}
+function adminLocaleLink($str) {
+    return '/'.app()->getLocale().'/admin-panel'.$str;
 }

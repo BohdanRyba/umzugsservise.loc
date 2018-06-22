@@ -24,20 +24,20 @@ class PermissionController extends AdminController
         $categories = $this->adminCategories;
 
         $permissions = Permission::orderBy('id', 'DESC')->paginate(5);
-        return view('admin.permission.index', compact('permissions','categories'))
+        return view('admin.permission.index', compact('permissions', 'categories'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
     public function create()
     {
         $categories = $this->adminCategories;
-        return view('admin.permission.create',compact('categories'));
+        return view('admin.permission.create', compact('categories'));
     }
 
     public function store(PermissionsCreateRequest $request)
     {
         Permission::create(['name' => $request->name]);
-        return redirect()->route('perms.index')
+        return redirect(adminLocaleLink('/perms'))
             ->with('success', 'Role created successfully');
     }
 
@@ -45,13 +45,14 @@ class PermissionController extends AdminController
     {
         $categories = $this->adminCategories;
         $perm = Permission::findById($id);
-        return view('admin.permission.show', compact('perm','categories'));
+        return view('admin.permission.show', compact('perm', 'categories'));
     }
 
-    public function destroy($id)
+    public function destroy(Permission $perm)
     {
-        $perm = Permission::findById($id);
         $perm->delete();
-        return redirect()->route('perms.index');
+
+        return redirect(adminLocaleLink('/perms'))
+            ->with('success', 'Permission was deleted successfully');
     }
 }

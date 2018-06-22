@@ -10,7 +10,7 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Roles</li>
             </ol>
@@ -32,7 +32,7 @@
             @endif
 
 
-            {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
+            {!! Form::model($role, ['method' => 'PATCH','url' => adminLocaleLink('/roles/'.$role->id), ]) !!}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">

@@ -10,9 +10,9 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('users.index')}}">Users</a></li>
+                <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/users')}}">Users</a></li>
                 <li class="breadcrumb-item active">Edit User {{$user->name}}</li>
             </ol>
             @if ($message = Session::get('success'))
@@ -33,7 +33,7 @@
             @endif
 
 
-            {!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+            {!! Form::model($user, ['method' => 'PATCH','url' => adminLocaleLink('/users/'.$user->id)]) !!}
 
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">

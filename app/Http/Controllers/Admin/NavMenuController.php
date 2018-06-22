@@ -22,7 +22,7 @@ class NavMenuController extends Controller
             'name' => 'Dashboard',
             'alias' => 'dashboard',
             'icon' => 'fa-dashboard',
-            'route' => 'admin.dashboard',
+            'route' => '/',
             'item_order' => 0,
             'is_archived' => 0,
             'id' => 1,
@@ -34,7 +34,7 @@ class NavMenuController extends Controller
             'name' => 'Users',
             'alias' => 'users',
             'icon' => 'fa-user',
-            'route' => 'users.index',
+            'route' => '/users',
             'item_order' => 0,
             'is_archived' => 0,
             'id' => 2,
@@ -46,7 +46,7 @@ class NavMenuController extends Controller
             'name' => 'Categories',
             'alias' => 'categories',
             'icon' => 'fa-bars',
-            'route' => 'categories.index',
+            'route' => '/categories',
 
             'item_order' => 0,
             'is_archived' => 0,
@@ -59,7 +59,7 @@ class NavMenuController extends Controller
             'name' => 'Roles',
             'alias' => 'roles',
             'icon' => 'fa-users',
-            'route' => 'roles.index',
+            'route' => '/roles',
 
             'item_order' => 0,
             'is_archived' => 0,
@@ -72,7 +72,7 @@ class NavMenuController extends Controller
             'name' => 'Permitions',
             'alias' => 'perms',
             'icon' => 'fa-address-card',
-            'route' => 'perms.index',
+            'route' => '/perms',
 
             'item_order' => 0,
             'is_archived' => 0,
@@ -85,7 +85,7 @@ class NavMenuController extends Controller
             'name' => 'Posts',
             'alias' => 'posts',
             'icon' => 'fa-file-text',
-            'route' => 'posts.index',
+            'route' => '/posts',
 
             'item_order' => 0,
             'is_archived' => 0,

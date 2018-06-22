@@ -2,15 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('', 'LangController@setLang');
-Route::get('/change/{locale}', 'LangController@changeLocale')->name('change.lang');
-Route::group(['prefix' => '{locale}', 'middleware' => ['lang']], function () {
+//Route::get('/change/{locale}', 'LangController@changeLocale')->name('change.lang');
+Route::group(['middleware' => 'lang', 'prefix' => '{lang}'], function () {
+    Route::get('', 'LangController@setLang');
     Auth::routes();
     Route::get('', 'HomeController@index')->name('home');
     Route::prefix('blog')->group(function () {
         Route::get('/', 'BlogController@index')->name('blog.index');
-        Route::get('/post/{id}', 'BlogController@show')->name('blog.post');
-        Route::get('/{alias}', 'BlogController@index')->name('blog.category');
+        Route::get('/{id}', 'BlogController@show')->name('blog.post');
+        Route::get('/category/{id}', 'BlogController@showByCategory')->name('blog.category');
     });
 
     Route::get('admin-panel/login', 'Admin\\AdminController@login')->name('admin.login');

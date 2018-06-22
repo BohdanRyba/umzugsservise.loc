@@ -10,9 +10,9 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('posts.index')}}">Posts</a></li>
+                <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/posts')}}">Posts</a></li>
                 <li class="breadcrumb-item active">Edit Post {{$post->name}}</li>
             </ol>
             @if ($message = Session::get('success'))
@@ -33,7 +33,7 @@
             @endif
 
 
-            <form action="{{ route('posts.update',$post->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ adminLocaleLink('/posts/'.$post->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
 
@@ -44,22 +44,22 @@
 
 
                 <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="title" value="{{$post->title}}"
+                    <strong>Title:</strong>
+                    <input type="text"name="title" value="{{old('title')?old('title'):$post->title}}"
                            class="form-control"
                            placeholder="Title">
                 </div>
 
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description"
-                              placeholder="Description">{{ $post->description }}</textarea>
+                    <textarea  id="description"  class="form-control" style="height:150px" name="description"
+                              placeholder="Description">{{ old('description')?old('description'):$post->description }}</textarea>
                 </div>
 
                 <div class="form-group">
                     <strong>Content:</strong>
-                    <textarea class="form-control" style="height:150px" name="content"
-                              placeholder="Content">{{ $post->content }}</textarea>
+                    <textarea  id="content"  class="form-control" style="height:150px" name="content"
+                              placeholder="Content">{{ old('content')?old('content'):$post->content }}</textarea>
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
@@ -68,4 +68,13 @@
             </form>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{ asset('admin-assets/vendor/unisharp/laravel-ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace('description');
+        CKEDITOR.replace('content');
+    </script>
 @endsection

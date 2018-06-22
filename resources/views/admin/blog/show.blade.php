@@ -10,9 +10,9 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('posts.index')}}">Posts</a></li>
+                <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/posts')}}">Posts</a></li>
                 <li class="breadcrumb-item active">Edit Post {{$post->name}}</li>
             </ol>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class Admin
@@ -14,7 +15,7 @@ class Admin
             return $next($request);
         }
 
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.login',['locale'=>App::getLocale()]);
 
     }
 }

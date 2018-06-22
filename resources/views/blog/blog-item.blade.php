@@ -8,8 +8,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="break-menu">
-                        <a class="back" href="{{route('home',['locale'])}}">Главная </a><span>|</span>
-                        <a class="back" href="{{route('blog.index',['locale'])}}">Блог </a><span>|</span>
+                        <a class="back" href="{{localeLink('/')}}">Главная </a><span>|</span>
+                        <a class="back" href="{{localeLink('/blog')}}">Блог </a><span>|</span>
                         <p>{{$post->title}}</p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                             </div>
                             <div class="section">
                                 @foreach($post->categories as $category)
-                                    <a href="{{route('blog.index')}}">{{$category->name}}</a>
+                                    <a href="{{localeLink('/blog')}}">{{$category->name}}</a>
                                 @endforeach
                             </div>
                         </div>
@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="constructor">
-                        {{$post->content}}
+                        {!!  $post->content!!}
                     </div>
                 </div>
             </div>
@@ -62,61 +62,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-    {{--<div class="section-helpful-information articleBlog">--}}
-    {{--<div class="container">--}}
-    {{--<div class="row">--}}
-    {{--<div class="col-sm-12">--}}
-    {{--<div class="title">--}}
-    {{--<h2>Похожие статьи</h2>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="row">--}}
-    {{--<div class="col-sm-4">--}}
-    {{--<div class="relocation repeat-col useful-blog">--}}
-    {{--<div class="foto-relocation">--}}
-    {{--<a href="#">--}}
-    {{--<img src="img/work/block5/foto1.png" alt="">--}}
-    {{--</a>--}}
-    {{--</div>--}}
-    {{--<div class="descript">--}}
-    {{--<a href="#">Длинное название статьи о том, что надо знать любому человеку для успешного--}}
-    {{--переезда</a>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="col-sm-4">--}}
-    {{--<div class="relocation repeat-col useful-blog">--}}
-    {{--<div class="foto-relocation">--}}
-    {{--<a href="#">--}}
-    {{--<img src="img/work/block5/foto2.png" alt="">--}}
-    {{--</a>--}}
-    {{--</div>--}}
-    {{--<div class="descript">--}}
-    {{--<a href="#">Длинное название статьи о том, что надо знать любому человеку для успешного--}}
-    {{--переезда</a>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="col-sm-4">--}}
-    {{--<div class="relocation repeat-col useful-blog">--}}
-    {{--<div class="foto-relocation">--}}
-    {{--<a href="#">--}}
-    {{--<img src="img/work/block5/foto3.png" alt="">--}}
-    {{--</a>--}}
-    {{--</div>--}}
-    {{--<div class="descript">--}}
-    {{--<a href="#">Длинное название статьи о том, что надо знать любому человеку для успешного--}}
-    {{--переезда</a>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    {{--</div>--}}
 
 @endsection
 

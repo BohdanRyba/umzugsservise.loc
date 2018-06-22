@@ -40,7 +40,7 @@ class CategoryController extends AdminController
 
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.categories.create', compact('locales', 'statuses','categories'));
+        return view('admin.categories.create', compact('locales', 'statuses', 'categories'));
     }
 
     public function createCategory(Request $request)
@@ -67,14 +67,14 @@ class CategoryController extends AdminController
     {
         $category = $this->createCategory($request);
         $this->setTranslation($category, $request);
-        return redirect()->route('categories.index');
+        return redirect(adminLocaleLink('/categories'))->with('success', 'Category was created successfuly');
     }
 
     public function show(Category $category)
     {
         $categories = $this->adminCategories;
 
-        return view('admin.categories.show', compact('category','categories'));
+        return view('admin.categories.show', compact('category', 'categories'));
     }
 
     public function edit(Category $category)
@@ -83,20 +83,20 @@ class CategoryController extends AdminController
 
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.categories.edit', compact('locales', 'statuses', 'category','categories'));
+        return view('admin.categories.edit', compact('locales', 'statuses', 'category', 'categories'));
     }
 
     public function update(CategoryUpdateRequest $request, Category $category)
     {
         $category->status = $request->input('status') ? $request->input('status') : Category::STATUS_PROCESSING;
         $this->setTranslation($category, $request);
-        return redirect()->route('categories.index');
+        return redirect(adminLocaleLink('/categories'))->with('success', 'Category was updated successfully');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('categories.index');
+        return redirect(adminLocaleLink('/categories'))->with('success', 'Category was deleted successfully');
     }
 
 }

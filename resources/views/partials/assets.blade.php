@@ -3,7 +3,8 @@
 <link rel="stylesheet" type="text/css" href="{{asset('front/plugin/fancybox-master/dist/jquery.fancybox.min.css')}}">
 <!-- OwlCarousel  -->
 <link rel="stylesheet" type="text/css" href="{{asset('front/plugin/OwlCarousel/dist/assets/owl.carousel.css')}}">
-<link rel="stylesheet" type="text/css" href="{{asset('front/plugin/OwlCarousel/dist/assets/owl.theme.default.min.css')}}">
+<link rel="stylesheet" type="text/css"
+      href="{{asset('front/plugin/OwlCarousel/dist/assets/owl.theme.default.min.css')}}">
 
 <link rel="stylesheet" type="text/css" href="{{asset('front/plugin/aSendForm/assets/a-valid.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('front/css/template.css')}}">
@@ -27,9 +28,12 @@
 <link rel="stylesheet" type="text/css" href="{{asset('/front/plugin/woocommerce/flexslider.css')}}"/>
 <!-- woocommerce  -->
 
-<link rel="stylesheet" href="{{asset('/front/plugin/jquery-ui/jquery-datepicker-skins-master/css/jquery-ui-1.10.1.css')}}">
-<link rel="stylesheet" href="{{asset('/front/plugin/jquery-ui/jquery-datepicker-skins-master/css/cangas.datepicker.css')}}">
-<link rel="stylesheet" href="{{asset('/front/plugin/jquery-ui/jquery-datepicker-skins-master/css/vigo.datepicker.css')}}">
+<link rel="stylesheet"
+      href="{{asset('/front/plugin/jquery-ui/jquery-datepicker-skins-master/css/jquery-ui-1.10.1.css')}}">
+<link rel="stylesheet"
+      href="{{asset('/front/plugin/jquery-ui/jquery-datepicker-skins-master/css/cangas.datepicker.css')}}">
+<link rel="stylesheet"
+      href="{{asset('/front/plugin/jquery-ui/jquery-datepicker-skins-master/css/vigo.datepicker.css')}}">
 <script type="text/javascript" src="{{asset('/front/plugin/Jquery.min/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('/front/plugin/Bootstrap/bootstrap.min.js')}}"></script>
 

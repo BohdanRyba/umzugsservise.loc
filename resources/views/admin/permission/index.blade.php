@@ -10,11 +10,11 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Permisions</li>
             </ol>
-            <a href="{{route('perms.create')}}" role="button" class="btn btn-info mb-3">Create</a>
+            <a href="{{adminLocaleLink('/perms/create')}}" role="button" class="btn btn-info mb-3">Create</a>
 
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
@@ -34,8 +34,8 @@
                         <td>{{ ++$i }}</td>
                         <td>{{ $perm->name }}</td>
                         <td>
-                            <a class="btn btn-info" href="{{ route('perms.show',$perm->id) }}">Show</a>
-                            {!! Form::open(['method' => 'DELETE','route' => ['perms.destroy', $perm->id],'style'=>'display:inline']) !!}
+                            <a class="btn btn-info" href="{{ adminLocaleLink('/perms/'.$perm->id) }}">Show</a>
+                            {!! Form::open(['method' => 'DELETE','url' =>adminLocaleLink('/perms/'.$perm->id),'style'=>'display:inline']) !!}
                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                             {!! Form::close() !!}
                         </td>

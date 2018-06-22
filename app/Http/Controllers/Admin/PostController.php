@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\Blog\BlogCreateRequest;
+use App\Http\Requests\Admin\Blog\BlogUpdateRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
@@ -35,7 +36,7 @@ class PostController extends AdminController
         $categories = $this->adminCategories;
 
         $posts = Post::with('attachments')->orderBy('id', 'desc')->paginate(5);
-        return view('admin.blog.index', compact('posts','categories'))
+        return view('admin.blog.index', compact('posts', 'categories'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
 
@@ -47,7 +48,7 @@ class PostController extends AdminController
         $postCategories = Category::all();
         $locales = $this->locales;
         $statuses = $this->statuses;
-        return view('admin.blog.create', compact('postCategories','locales','categories', 'statuses', 'categories'));
+        return view('admin.blog.create', compact('postCategories', 'locales', 'categories', 'statuses', 'categories'));
     }
 
     public function newPost(Request $request)
@@ -88,9 +89,9 @@ class PostController extends AdminController
     public function setTranslations($post, $request)
     {
         $locale = $request->input('locale');
-            $post->translateOrNew($locale)->title = $request->input('title');
-            $post->translateOrNew($locale)->description = $request->input( 'description');
-            $post->translateOrNew($locale)->content = $request->input('content');
+        $post->translateOrNew($locale)->title = $request->input('title');
+        $post->translateOrNew($locale)->description = $request->input('description');
+        $post->translateOrNew($locale)->content = $request->input('content');
 
         $post->save();
     }
@@ -98,43 +99,50 @@ class PostController extends AdminController
     public function store(BlogCreateRequest $request)
     {
         $this->newPost($request);
-        return redirect()->route('posts.index');
+        return redirect(adminLocaleLink('/posts'));
     }
 
 
     public function show(Post $post)
     {
         $categories = $this->adminCategories;
-        return view('admin.blog.show', compact('post','categories'));
+        return view('admin.blog.show', compact('post', 'categories'));
     }
 
 
     public function edit(Post $post)
     {
         $categories = $this->adminCategories;
-        return view('admin.blog.edit', compact('post','categories'));
+        return view('admin.blog.edit', compact('post', 'categories'));
     }
 
-    public function update(Request $request, Post $post)
+    public function update(BlogUpdateRequest $request, Post $post)
     {
-        $post->status = $request->input('status') ? $request->input('status') : $this->statuses[0];
-
+        $post->status = $request->has('status') ? $request->status : Post::STATUS_PROCESSING;
         foreach ($this->locales as $key => $locales) {
-            $post->translateOrNew($key)->title = $request->innput($key . '-title');
-            $post->translateOrNew($key)->description = $request->input($key . '-description');
-            $post->translateOrNew($key)->content = $request->iput($key . '-content');
+            $post->translateOrNew($key)->title = $request->input('title');
+            $post->translateOrNew($key)->description = $request->input('description');
+            $post->translateOrNew($key)->content = $request->input('content');
         }
 
         $post->save();
 
-        return redirect()->route('posts.index');
+        return redirect(adminLocaleLink('/posts'))->with('success', 'Post was updated successfully');
     }
 
 
     public function destroy(Post $post)
     {
+
+        $imgs = $post->attachments()->get();
+        foreach ($imgs as $img) {
+            dump(Storage::delete($img->filePath));
+        }
+        dd('');
+        $post->categories()->sync([]);
         $post->delete();
-        return redirect()->route('posts.index');
+        return redirect(adminLocaleLink('/posts'))->with('success', 'Post was deleted successfully');
+
     }
 
 }

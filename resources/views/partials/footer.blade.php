@@ -22,13 +22,14 @@
                 <div class="col-md-5 col-sm-6">
                     <div class="center-col">
                         <div class="menu">
-                            <a href="/">Главная</a>
+                            <a href="{{localeLink('')}}">Главная</a>
+
                             <a href="/aboutUs.php">О нас</a>
                             <a href="/working.php">Как мы работаем</a>
                         </div>
                         <div class="menu">
                             <a href="/partners.php">Партнерам</a>
-                            <a href="/blog.php">Блог</a>
+                            <a href="{{localeLink('/blog')}}">Блог</a>
                             <a href="/faq.php">FAQ</a>
                         </div>
 

@@ -3,26 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Cookie;
 
 class LangController extends Controller
 {
 
     public function setLang(Request $request)
     {
-        if (Session::has('lang')) {
-            App::setLocale(Session::get('lang'));
-        } else {
-            App::setLocale(config('app.locale'));
+        if (Cookie::has(['lang']) && Cookie::get(['lang']) && in_array(Cookie::get(['lang']), config('translatable.locales'))) {
+            return redirect('/' . Cookie::get(['lang']));
         }
-        return redirect()->route('home',['locale'=>App::getLocale()]);
-    }
 
-    public function changeLocale($locale)
-    {
-        Session::put('lang', $locale);
-        return redirect()->action('LangController@setLang');
+        return redirect(config('app.locale'));
     }
-
 }

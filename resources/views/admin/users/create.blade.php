@@ -10,9 +10,9 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active"><a href="{{route('users.index')}}">Users</a></li>
+                <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/users')}}">Users</a></li>
                 <li class="breadcrumb-item active">Edit User</li>
             </ol>
             @if ($message = Session::get('success'))
@@ -34,7 +34,7 @@
 
 
 
-            {!! Form::open(array('route' => 'users.store','method'=>'POST')) !!}
+            {!! Form::open(array('url' => adminLocaleLink('/users'),'method'=>'POST')) !!}
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">

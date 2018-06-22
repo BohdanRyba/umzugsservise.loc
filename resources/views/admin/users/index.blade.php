@@ -11,13 +11,13 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('/')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Users</li>
             </ol>
-            <a href="{{route('users.create')}}" role="button" class="btn btn-info mb-3">Create</a>
+            <a href="{{adminLocaleLink('/users/create')}}" role="button" class="btn btn-info mb-3">Create</a>
 
-        @if ($message = Session::get('success'))
+            @if ($message = Session::get('success'))
                 <div class="alert alert-success">
                     <p>{{ $message }}</p>
                 </div>
@@ -62,9 +62,11 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-                                        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-                                        {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+                                        <a class="btn btn-info"
+                                           href="{{ adminLocaleLink('/users/'.$user->id) }}">Show</a>
+                                        <a class="btn btn-primary"
+                                           href="{{ adminLocaleLink('/users/'.$user->id.'/edit') }}">Edit</a>
+                                        {!! Form::open(['method' => 'DELETE','url' =>adminLocaleLink('/users/'.$user->id),'style'=>'display:inline']) !!}
                                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                         {!! Form::close() !!}
                                     </td>

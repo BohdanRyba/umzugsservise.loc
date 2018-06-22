@@ -23,7 +23,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+                    <form method="POST" action="{{ localeLink('/register') }}" aria-label="{{ __('Register') }}">
                         @csrf
 
                         <div class="form-group row">

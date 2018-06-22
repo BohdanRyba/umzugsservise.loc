@@ -9,11 +9,11 @@
             <!-- Breadcrumbs-->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+                    <a href="{{adminLocaleLink('/')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Categories</li>
             </ol>
-            <a href="{{route('categories.create')}}" role="button" class="btn btn-info mb-3">Create</a>
+            <a href="{{adminLocaleLink('/categories/create')}}" role="button" class="btn btn-info mb-3">Create</a>
 
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
@@ -41,10 +41,10 @@
                                                     </label>
                         </td>
                         <td>
-                            <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
-                                <a class="btn btn-info" href="{{ route('categories.show',$category->id) }}">Show</a>
+                            <form action="{{ adminLocaleLink('/categories/'.$category->id) }}" method="POST">
+                                <a class="btn btn-info" href="{{ adminLocaleLink('/categories/'.$category->id) }}">Show</a>
                                 {{--@can('posts-edit')--}}
-                                <a class="btn btn-primary" href="{{ route('categories.edit',$category->id) }}">Edit</a>
+                                <a class="btn btn-primary" href="{{ adminLocaleLink('/categories/'.$category->id.'/edit') }}">Edit</a>
                                 {{--@endcan--}}
                                 @csrf
                                 @method('DELETE')

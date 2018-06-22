@@ -159,6 +159,7 @@ return [
 
         Vluzrmos\LanguageDetector\Providers\LanguageDetectorServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Unisharp\Ckeditor\ServiceProvider::class,
         /*
          * Application Service Providers...
          */

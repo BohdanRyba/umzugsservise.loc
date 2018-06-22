@@ -19,11 +19,11 @@
                             <div>
                                 <div>
                                     <ul>
-                                        <li><a href="{{route('home',['locale'=>Session::get('locale')])}}">Главная</a></li>
+                                        <li><a href="{{localeLink('')}}">Главная</a></li>
                                         <li><a href="/working.php">Как мы работаем</a></li>
                                         <li><a href="/partners.php">Партнерам</a></li>
                                         <li><a href="/aboutUs.php">О нас</a></li>
-                                        <li><a href="{{route('blog.index',['locale'=>App::getLocale()])}}">Блог</a></li>
+                                        <li><a href="{{localeLink('/blog')}}">Блог</a></li>
                                         <li><a href="/faq.php">FAQ</a></li>
                                         <li><a href="/lk_client.php">Личный кабинет</a></li>
                                     </ul>
@@ -36,15 +36,15 @@
                     <div class="entrance">
                         <div class="language">
                             <a class="@if(App::getLocale() == 'en') active @endif"
-                               href="{{route('change.lang',['locale'=>'en'])}}">
+                               href="{{'/en'}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_United_Kingdom.svg')}}" alt="">
                             </a>
                             <a class="@if(App::getLocale() == 'de') active @endif"
-                               href="{{route('change.lang',['locale'=>'de'])}}">
+                               href="{{'/de'}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_Germany.svg')}}" alt="">
                             </a>
                             <a class="@if(App::getLocale() == 'ru') active @endif"
-                               href="{{route('change.lang',['locale'=>'ru'])}}">
+                               href="{{'/ru'}}">
                                 <img src="{{asset('front/img/header/1_menu_Flag_of_Russia.svg')}}" alt="">
                             </a>
                         </div>

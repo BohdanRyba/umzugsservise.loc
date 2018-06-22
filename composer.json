@@ -17,6 +17,7 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^5.4.0",
         "spatie/laravel-permission": "^2.12",
+        "unisharp/laravel-ckeditor": "^4.7",
         "vluzrmos/language-detector": "^1.0"
     },
     "require-dev": {

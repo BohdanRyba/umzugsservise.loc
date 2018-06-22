@@ -45,7 +45,6 @@ class UserController extends AdminController
 
     public function store(UserCreateRequest $request)
     {
-        dd($request->name);
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -56,7 +55,7 @@ class UserController extends AdminController
         $user = $user->assignRole($request->input('roles'));
 
 
-        return redirect()->route('users.index')
+        return redirect(adminLocaleLink('/users'))
             ->with('success', 'User created successfully');
     }
 
@@ -101,7 +100,7 @@ class UserController extends AdminController
         $user->assignRole($request->input('roles'));
 
 
-        return redirect()->route('users.index')
+        return redirect(adminLocaleLink('/users'))
             ->with('success', 'User updated successfully');
     }
 
@@ -109,7 +108,7 @@ class UserController extends AdminController
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('users.index')
+        return redirect(adminLocaleLink('/users'))
             ->with('success', 'User deleted successfully');
     }
 }

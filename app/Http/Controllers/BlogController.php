@@ -8,18 +8,25 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index($locale)
+    public function index()
     {
-        $categories = Category::all();
-        $posts = Post::where('status', '=', Post::STATUS_PUBLISHED)->with(['attachments'])->orderBy('id', 'desc')->paginate(1);
+        $categories = Category::where('status', '=' , Category::STATUS_PUBLISHED)->get();
+        $posts = Post::where('status', '=', Post::STATUS_PUBLISHED)->with(['attachments'])->orderBy('id', 'desc')->paginate(8);
         return view('blog.index', compact('posts', 'categories'));
     }
+
     public function show($id)
     {
-
         $post = Post::with(['attachments'])->find($id);
-//        $posts = Post::where('status', '=', Post::STATUS_PUBLISHED)->orderBy('id', 'desc')->paginate('8');
-//        dd($categories = $post->categories);
+
         return view('blog.blog-item', compact('post'));
+    }
+
+    public function showByCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        $categories = Category::where('status', '=' , Category::STATUS_PUBLISHED)->get();
+        $posts = $category->posts()->where('status', '=', Post::STATUS_PUBLISHED)->with(['attachments'])->orderBy('id', 'desc')->paginate(8);
+        return view('blog.index', compact('posts', 'categories'));
     }
 }

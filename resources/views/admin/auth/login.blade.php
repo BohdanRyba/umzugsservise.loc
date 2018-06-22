@@ -51,7 +51,7 @@
                     </form>
 
                     <div class="text-center">
-                        <a class="d-block small" href="{{ route('password.request') }}">
+                        <a class="d-block small" href="{{localeLink('/password/reset')}}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     </div>
@@ -61,12 +61,12 @@
                     <p>
                         You are already log in, please log out and log in as admin to access to admin-panel
                     </p>
-                    <a class="btn btn-success" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a class="btn btn-success" href="{{localeLink('/logout') }}" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();" data-toggle="modal"
                         {{--data-target="#exampleModal"--}}
                     >
                         <i class="fa fa-fw fa-sign-out"></i>{{ __('Logout') }}</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                    <form id="logout-form" action="{{ localeLink('/logout')}}" method="POST"
                           style="display: none;">
                         @csrf
                     </form>
