@@ -49,8 +49,8 @@
                                                 <div class="foto">
                                                     <a href="{{localeLink('/blog/'.$post->id)}}">
                                                         <img
-                                                            src="http://umzugsservise.loc/{{ $post->attachments->filePath}}"
-                                                            alt="">
+                                                            src="{{getImgUrl($post->attachments[2]->filePath)}}"
+                                                            alt="{{$post->attachments[2]->fileName}}">
                                                     </a>
                                                 </div>
 

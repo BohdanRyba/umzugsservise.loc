@@ -37,8 +37,12 @@
                         <tr>
                             <td>{{ ++$i }}</td>
                             <td>{{ $post->title }}</td>
-                            <td><img width="180px" src="http://umzugsservise.loc/{{ $post->attachments->filePath }}"
-                                     alt="{{$post->attachments->fileName}}"></td>
+                            <td>
+                                @if(isset($post->attachments[0]->filePath))
+                                    <img width="180px"
+                                         src="http://umzugsservise.loc/public/{{ $post->attachments[0]->filePath }}"
+                                         alt="{{$post->attachments[0]->fileName}}">
+                                @else No img @endif</td>
                             <td>{{ $post->user->name }}</td>
                             <td><label class="badge
                                 @if($post->status == 'processing')

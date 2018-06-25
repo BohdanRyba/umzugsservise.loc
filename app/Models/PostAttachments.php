@@ -13,6 +13,9 @@ class PostAttachments extends Model
         'fileMime',
         'fileSize',
         'filePath',
+        'fileHeight',
+        'fileWidth',
+        'sizeType'
     ];
 
     public function post()

@@ -13,7 +13,7 @@
                     <a href="{{adminLocaleLink('')}}">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active"><a href="{{adminLocaleLink('/posts')}}">Posts</a></li>
-                <li class="breadcrumb-item active">Edit Posts</li>
+                <li class="breadcrumb-item active">Create Post</li>
             </ol>
             @if ($message = Session::get('success'))
                 <div class="alert alert-success">
@@ -38,7 +38,7 @@
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <div class="form-group">
                         <strong>Image:</strong>
-                        <input type="file" name="post_img" class="form-control">
+                        {{Form::file('post_img',['class'=>'form-control'])}}
                     </div>
                     <div class="form-group">
                         <strong>Category:</strong>
@@ -62,9 +62,9 @@
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>Name:</strong>
-                                <input type="text" name="title" value="{{ old('title') }}"
-                                       class="form-control"
-                                       placeholder="Title">
+                                {{Form::text('title', old('title'),[
+                                'class'=> 'form-control', 'placeholder'=>'Title'
+                                ] )}}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -75,8 +75,6 @@
                                 'id'=>'description',
                                 'placeholder'=>'Description'
                                 ])}}
-                                {{--<textarea class="form-control" style="height:150px" name="description"--}}
-                                {{--                                          placeholder="Description">{{old('description')}}</textarea>--}}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -99,7 +97,7 @@
                         </select>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        {{Form::submit('Submit',['class'=>'btn btn-success'])}}
                     </div>
                 </div>
 

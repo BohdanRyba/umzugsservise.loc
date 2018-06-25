@@ -93,5 +93,18 @@ class NavMenuController extends Controller
             'children' => [],
             'parent' => 'root',
         ],
+        7 => [
+            'indent' => 1,
+            'name' => 'Pages',
+            'alias' => 'pages',
+            'icon' => '',
+            'route' => '/pages',
+
+            'item_order' => 0,
+            'is_archived' => 0,
+            'id' => 7,
+            'children' => [],
+            'parent' => 'root',
+        ],
     ];
 }

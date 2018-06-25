@@ -27,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/";
+    protected $redirectTo = '';
 
     /**
      * Create a new controller instance.
@@ -37,6 +37,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->redirectTo = "/" . App::getLocale();
     }
 
     protected function authenticated(Request $request, $user)
@@ -44,7 +45,7 @@ class LoginController extends Controller
         if ($user->hasRole('Admin') && $request->input('admin') == true) {
             return redirect()->route('admin.dashboard');
         }
-        return redirect()->route('home');
+        return redirect(localeLink('/'));
     }
 
     public function logout(Request $request)
@@ -53,6 +54,6 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        return redirect()->route('home',['locale'=>App::getLocale()]);
+        return redirect(localeLink('/'));
     }
 }

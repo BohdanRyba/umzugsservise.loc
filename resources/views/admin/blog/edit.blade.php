@@ -40,26 +40,43 @@
                 <div class="form-group">
                     <strong>Image:</strong>
                     <input type="file" name="post_img" class="form-control">
+                    <div class="mt-3">
+
+                    @foreach($post->attachments as $attachment)
+                        <img width="100px" src="{{getImgUrl($attachment->filePath)}}" alt="{{$attachment->fileName}}">
+                        <br>
+                        <p><small>{{$attachment->sizeType}}</small></p>
+                    @endforeach
+                    </div>
                 </div>
 
 
                 <div class="form-group">
                     <strong>Title:</strong>
-                    <input type="text"name="title" value="{{old('title')?old('title'):$post->title}}"
-                           class="form-control"
-                           placeholder="Title">
+                    {{Form::input('text','title',old('title')?old('title'):$post->title,[
+                        'class'=>'form-control',
+                        'placeholder'=>'Title',
+                    ])}}
                 </div>
 
                 <div class="form-group">
                     <strong>Description:</strong>
-                    <textarea  id="description"  class="form-control" style="height:150px" name="description"
-                              placeholder="Description">{{ old('description')?old('description'):$post->description }}</textarea>
+                    {{Form::textarea('description',old('description')?old('description'):$post->description,[
+                    'id'=>'description',
+                    'style'=>'height:150px;',
+                    'class'=>'form-control',
+                    'placeholder'=>"Description"
+                    ])}}
                 </div>
 
                 <div class="form-group">
                     <strong>Content:</strong>
-                    <textarea  id="content"  class="form-control" style="height:150px" name="content"
-                              placeholder="Content">{{ old('content')?old('content'):$post->content }}</textarea>
+                    {{Form::textarea('content',old('content')?old('content'):$post->content,[
+                    'id'=>'content',
+                    'style'=>'height:150px;',
+                    'class'=>'form-control',
+                    'placeholder'=>"Content"
+                    ])}}
                 </div>
 
                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">

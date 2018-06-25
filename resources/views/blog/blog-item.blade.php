@@ -33,8 +33,8 @@
                             </div>
                         </div>
                         <div class="foto">
-                            <img src="http://umzugsservise.loc/{{ $post->attachments->filePath}}"
-                                 alt="{{$post->attachments->fileName}}">
+                            <img src="{{ getImgUrl($post->attachments[2]->filePath)}}"
+                                 alt="{{$post->attachments[2]->fileName}}">
                         </div>
                     </div>
                 </div>

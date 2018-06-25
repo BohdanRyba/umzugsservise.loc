@@ -21,33 +21,39 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Name:</strong>
-                        {{ $post->title }}
-                    </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 ">
+                <div class="form-group">
+                    <strong>Title:</strong>
+                    {{ $post->title }}
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Description:</strong>
-                        {{ $post->description }}
-                    </div>
+            </div>
+            <strong class="mt-3">Images:</strong>
+            @foreach($post->attachments as $img)
+                <div>
+                    <img width="{{$img->fileWidth}}"
+                         src="{{getImgUrl($img->filePath)}}" alt="{{$img->fileName}}">
+                    <strong><p>{{$img->fileName}}</p></strong>
+                    <small><p>Width:{{$img->fileWidth}} | Height:{{$img->fileHeight}}</p></small>
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Content:</strong>
-                        {{ $post->content }}
-                    </div>
+            @endforeach
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
+                <div class="form-group">
+                    <strong>Description:</strong><br>
+                    {!!   $post->description !!}
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <strong>Timestamps:</strong>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
+                <div class="form-group">
+                    <strong>Content:</strong><br>
+                    {!! $post->content  !!}
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 mt-3">
+                <div class="form-group">
+                    <small><strong>Timestamps:</strong><br>
                         <strong>Created:</strong>{{ $post->created_at }} |
                         <strong>Updated:</strong> {{$post->updated_at}}
-                        <br>
-                        <small><strong>User:{{ $post->user->name }}</strong></small>
-                    </div>
+                        <br><strong>User:{{ $post->user->name }}</strong></small>
                 </div>
             </div>
         </div>

@@ -33,8 +33,7 @@
 
 
             <form action="{{ adminLocaleLink('/categories') }}" method="post">
-            {{csrf_field()}}
-            <!-- Tab panes -->
+                {{csrf_field()}}
                 <div class="form-group">
                     <strong>Status:</strong>
                     <select name="status" class="custom-select">
@@ -43,21 +42,17 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="form-group">
-                    <strong>Alias:</strong>
-                    <input type="text" name="alias" value="{{ old($key.'-alias') }}"
-                           class="form-control"
-                           placeholder="Name">
-                </div>
 
                 @foreach($locales as $key => $locale)
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <strong>{{$locale}} Name:</strong>
-                                <input type="text" name="{{$key}}-name" value="{{ old($key.'-name') }}"
-                                       class="form-control"
-                                       placeholder="Name">
+                                {{
+                                Form::text($key.'-name',old($key.'-name'),[
+                                'class'=>'form-control','placeholder'=>'Name'
+                                ])
+                                }}
                             </div>
                         </div>
                     </div>
@@ -68,6 +63,5 @@
         </div>
 
         </form>
-    </div>
     </div>
 @endsection

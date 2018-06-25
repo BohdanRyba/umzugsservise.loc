@@ -7,14 +7,21 @@ use App\Http\Requests\Admin\Blog\BlogUpdateRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\PostAttachments;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class PostController extends AdminController
 {
     public $locales = [];
     public $statuses = [];
+    public $sizes = [
+        'sm' => [100, 50],
+        'md' => [300, 150],
+        'lg' => [700, 350],
+    ];
 
     public function __construct()
     {
@@ -35,7 +42,10 @@ class PostController extends AdminController
     {
         $categories = $this->adminCategories;
 
-        $posts = Post::with('attachments')->orderBy('id', 'desc')->paginate(5);
+        $posts = Post::with(['attachments' => function ($q) {
+            $q->where('sizeType','sm');
+        }])->orderBy('id', 'desc')->paginate(5);
+
         return view('admin.blog.index', compact('posts', 'categories'))
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -71,16 +81,24 @@ class PostController extends AdminController
             $fileSize = $file->getSize();
             $fileExtension = $file->getClientOriginalExtension();
             $fileMime = $file->getClientMimeType();
-            $image = new \App\Models\PostAttachments([
-                'post_id' => $post->id,
-                'fileExtension' => $fileExtension,
-                'fileName' => $fileName,
-                'fileMime' => $fileMime,
-                'fileSize' => $fileSize,
-                'filePath' => 'public/storage/blog/' . $fileExtension . '/' . Storage::disk('blog_' . $fileExtension)
-                        ->put('', $file)
-            ]);
-            $image->save();
+            foreach ($this->sizes as $key => $size) {
+                $link = '/storage/blog/' . $fileExtension . '/' . time() . '_' . $file->getClientOriginalName();
+                $path = public_path('/storage/blog/' . $fileExtension . '/' . time() . '_' . $file->getClientOriginalName());
+                $image = new PostAttachments([
+                    'post_id' => $post->id,
+                    'fileExtension' => $fileExtension,
+                    'fileName' => $fileName,
+                    'fileMime' => $fileMime,
+                    'fileSize' => $fileSize,
+                    'fileWidth' => $size[0],
+                    'fileHeight' => $size[1],
+                    'sizeType' => $key,
+                    'filePath' => $link
+                ]);
+                Image::make($file)->resize($size[0], $size[1])
+                    ->save($path);
+                $image->save();
+            }
         } else {
             return;
         }
@@ -135,10 +153,9 @@ class PostController extends AdminController
     {
 
         $imgs = $post->attachments()->get();
-        foreach ($imgs as $img) {
-            dump(Storage::delete($img->filePath));
+        foreach ($imgs as $item) {
+            @unlink($item->filePath);
         }
-        dd('');
         $post->categories()->sync([]);
         $post->delete();
         return redirect(adminLocaleLink('/posts'))->with('success', 'Post was deleted successfully');

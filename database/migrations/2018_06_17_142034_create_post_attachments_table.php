@@ -19,6 +19,9 @@ class CreatePostAttachmentsTable extends Migration
             $table->string('fileName', 255);
             $table->string('fileExtension', 255);
             $table->string('fileMime', 255);
+            $table->unsignedInteger('fileHeight');
+            $table->unsignedInteger('fileWidth');
+            $table->string('sizeType',255);
             $table->string('fileSize', 255);
             $table->string('filePath', 255);
             $table->timestamps();

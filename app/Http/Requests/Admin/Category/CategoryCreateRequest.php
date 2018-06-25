@@ -24,7 +24,6 @@ class CategoryCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'alias' => 'required|unique:categories,alias',
             'status' => 'required',
             'de-name' => 'required',
             'en-name' => 'required',
@@ -35,8 +34,6 @@ class CategoryCreateRequest extends FormRequest
     public function messages()
     {
         return [
-            'alias.required' => 'Alias is required field',
-            'alias.unique' => 'Category Alias must be unique',
             'status' => 'Status is required field',
             'de-name' => 'Deutsch Name is required field',
             'en-name' => 'English Name is required field',

@@ -13,7 +13,11 @@ class Post extends Model
     const STATUS_PUBLISHED = 'published';
     const STATUS_PROCESSING = 'processing';
 
-    public $translatedAttributes = ['title', 'description', 'content'];
+    public $translatedAttributes = [
+        'title',
+        'description',
+        'content'
+    ];
 
     protected $fillable = ['status', 'user_id'];
 
@@ -27,12 +31,12 @@ class Post extends Model
 
     public function attachments()
     {
-        return $this->hasOne(PostAttachments::class);
+        return $this->hasMany(PostAttachments::class);
     }
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class,'post_categories');
+        return $this->belongsToMany(Category::class, 'post_categories');
     }
 
     public function user()

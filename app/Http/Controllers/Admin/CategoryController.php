@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\Category\CategoryCreateRequest;
 use App\Http\Requests\Admin\Category\CategoryUpdateRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class CategoryController extends AdminController
 {
@@ -46,7 +47,7 @@ class CategoryController extends AdminController
     public function createCategory(Request $request)
     {
         return Category::create([
-            'alias' => $request->input('alias'),
+            'alias' => Str::slug($request->input('en-name','_')),
             'status' =>
                 $request->input('status') ?
                     $request->input('status') :

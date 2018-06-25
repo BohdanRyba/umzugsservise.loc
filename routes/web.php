@@ -17,6 +17,7 @@ Route::group(['middleware' => 'lang', 'prefix' => '{lang}'], function () {
     Route::get('admin-panel', 'Admin\\AdminController@index')->name('admin.dashboard');
     Route::group(['middleware' => ['role:Admin'], 'namespace' => 'Admin'], function () {
         Route::prefix('admin-panel')->group(function () {
+            Route::resource('pages', 'PageController');
             Route::resource('roles', 'RoleController');
             Route::resource('users', 'UserController');
             Route::resource('posts', 'PostController');
