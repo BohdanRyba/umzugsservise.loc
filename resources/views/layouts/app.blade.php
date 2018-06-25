@@ -10,11 +10,11 @@
 
     <title>{{ config('app.name', 'Env') }}</title>
     @include('partials.assets')
+    @yield('scripts')
 </head>
 <body>
 @yield('header')
 @yield('content')
 @include('partials.footer')
-@yield('scripts')
 </body>
 </html>
