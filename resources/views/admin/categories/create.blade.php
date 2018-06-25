@@ -57,10 +57,11 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="col-xs-12 col-sm-12 col-md-12 text-left">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+
             </form>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-            <button type="submit" class="btn btn-success">Submit</button>
         </div>
 
     </div>
