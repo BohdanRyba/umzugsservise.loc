@@ -7,7 +7,7 @@
             @guest
                 <div class="card-header">Login</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ adminLocaleLink('admin-panel/login') }}" aria-label="{{ __('Login') }}">
+                    <form method="POST" action="{{ localeLink('/login') }}" aria-label="{{ __('Login') }}">
                         @csrf
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>

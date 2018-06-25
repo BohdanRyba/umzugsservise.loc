@@ -43,7 +43,7 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->hasRole('Admin') && $request->input('admin') == true) {
-            return redirect()->route('admin.dashboard');
+            return redirect(adminLocaleLink(''));
         }
         return redirect(localeLink('/'));
     }
